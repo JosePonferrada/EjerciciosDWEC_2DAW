@@ -1,7 +1,7 @@
-let randomNumber = Math.floor(Math.random() * 100) + 1;
-let trysLeft = 10;
-let lowerLimit = 1;
-let supLimit = 100;
+var randomNumber = Math.floor(Math.random() * 100) + 1;
+var trysLeft = 10;
+var lowerLimit = 1;
+var supLimit = 100;
 
 
 function empezarJuego(numero) {
