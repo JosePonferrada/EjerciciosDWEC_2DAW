@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prueba de Funciones</title>
+</head>
+<body>
+
+    <script>
+
+        // En una función los parámetros primitivos se pasan por valor, en cambio, los que no lo son se pasan por referencia
+        // Las funciones se pueden llamar cuando queramos ya que el intérprete coloca las declaraciones de éstas al principio del todo
+
+        // Función declarada
+
+        var a = 5;
+
+        function mostrar() {
+            document.write("pepito");
+        }
+        
+        mostrar();
+
+        // Una función expresada debe ser llamada tras su declaración
+
+        function funcionDeclarada() {
+            document.write("miguel");
+        }        
+
+        funcionExpresada = function(){document.write("miguel2")};
+        funcionDeclarada();
+        funcionExpresada();
+
+        // En cambio, si llamamos a ambas funciones al principio solo mostrará el primer miguel ya que la otra es una función expresada
+
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prueba de Arrays</title>
+</head>
+<body>
+    
+    <script>
+
+        vector2 = ["a", "b"];
+        vector = vector2; // Al hacer esto, como trabajan por referencia, si modifico uno, se modifica el otro
+
+        vector[0] = ["c"];
+
+        // Pese a poner const al crear un array, siempre se podrán modificar porque trabajan por referencia
+
+        const array1 = ["a", "b"];
+        const array2 = [...array1];  // Cuando queremos trabajar con una copia del array, usaremos SpeedString(?) y así no trabajaremos por referencia
+
+        console.log(array1);
+        console.log(array2);
+
+        // Aunque parezcan 2 arrays diferentes son el mismo si no usamos [...nombreArray]
+
+        array2[0] = "c";
+
+        console.log(array2);
+        console.log(array1);
+
+        array3 = ["a", 1, "b", [5, "c"]];
+        console.log(array3[1], " ", array3[0]);
+        console.log(array3[3]);
+        console.log(array3[3][0]); // Dentro del array del array3, accedemos a la posición 0
+
+        // Método push() agrega elementos al final del array
+        // Método pop() quita elementos del final
+
+        // Usamos el forEach para pasar por cada posición
+        let vector3= Array.of("A","B","C");
+        
+        vector3.forEach(function(el,index){
+        console.log(`<li id='${index}'>${el}</li>`);});
+
+    </script>
+
+</body>
+</html>

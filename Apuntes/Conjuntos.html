@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prueba de Conjuntos</title>
+</head>
+<body>
+    
+    <script>
+
+        // Los datos introducidos en un conjunto(Set) no se pueden repetir
+        // Aunque intentes añadir datos repetidos, no te dará error pero tampoco los mostrará, simplemente los omite
+
+        const c1 = new Set(); // Conjunto vacío
+        const c2 = new Set([1, 2, 3, 4]); // Conjunto de 4 elementos
+        const c3 = new Set([1, 1, 2, 3]); // Conjunto de 3 elementos
+        const c4 = new Set(["a", "b", "c", "a", "A"]); // Es caseSensitive
+
+        console.log(c1);
+        console.log(c2);
+        console.log(c3);
+        console.log(c4);
+
+        // Size es una propiedad que nos dice el tamaño del conjunto
+        // Con el método add() podemos añadir un elemento
+        // Con el método has() podemos comprobar si existe un elemento en el conjunto
+        // Con el método delete() podemos borrar un elemento del conjunto
+        // Con el método clear() podemos vaciar un conjunto
+
+    </script>
+
+</body>
+</html>
