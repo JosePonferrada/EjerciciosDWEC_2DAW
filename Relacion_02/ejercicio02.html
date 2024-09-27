@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 02 - Arrays & Funciones</title>
+</head>
+<body>
+
+    <div id="resultado"></div>
+    
+    <script>
+
+        const array = [];
+        let sum = 0;
+
+        for (let i = 1; i <= 10; i++) {
+            numero = parseInt(prompt("Introduzca un número"));
+            // array[i] = numero;
+            array.push(numero);
+            sum += numero;
+
+        }
+
+        document.write("Los números introducidos son: " + array.join(", ") + "<br>");
+
+        document.write("La suma total de todos los números introducidos es: " + sum);
+
+    </script>
+
+</body>
+</html>
