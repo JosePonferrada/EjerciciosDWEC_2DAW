@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 09 - Conjuntos & Mapas</title>
+</head>
+<body>
+    
+    <script>
+
+        const meses = new Set(["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"]);
+
+        console.log(meses);
+
+        meses.delete("Mayo");
+        console.log(meses);
+
+        meses.add("NuevoMes");
+        console.log(meses);
+
+        console.log(meses.has("Mayo") && meses.has("Junio")); // False
+
+        const arraymeses = [...meses];
+
+        console.log(arraymeses);
+
+        arraymeses.splice(0,1); // Con eso borramos el elemento en la posición del primer índice y luego decimos cuántos elementos borramos
+        console.log(meses);
+        console.log(arraymeses);
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 04 - Arrays & Funciones</title>
+</head>
+<body>
+    
+    <script>
+
+        function esPalindromo(cadena) {
+            // Convertimos la cadena a minúsculas y le quitamos los espacios
+            let cadenaNormal = '';
+            
+            for (let i = 0; i < cadena.length; i++) {
+                const caracter = cadena[i].toLowerCase();
+                // Solo agregar caracteres alfanuméricos
+                if (caracter !== ' ') {
+                    cadenaNormal += caracter;
+                }
+            }
+            
+            // Invertir la cadena normal
+            let cadenaInvertida = '';
+            for (let i = cadenaNormal.length - 1; i >= 0; i--) {
+                cadenaInvertida += cadenaNormal[i];
+            }
+            
+            // Comparar la cadena normal con la cadena invertida
+            return cadenaNormal === cadenaInvertida;
+        }
+
+        // TESTING
+        const texto1 = "Dabale arroz a la zorra el abad";
+        const texto2 = "Hola mundo";
+
+        console.log(`¿"${texto1}" es un palíndromo?`, esPalindromo(texto1)); 
+        console.log(`¿"${texto2}" es un palíndromo?`, esPalindromo(texto2)); 
+
+
+    </script>
+
+</body>
+</html>

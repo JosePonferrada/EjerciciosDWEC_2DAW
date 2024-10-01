@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 05 - Arrays & Funciones</title>
+</head>
+<body>
+    
+    <script>
+
+        const letras = ['T', 'R', 'W', 'A', 'G', 'M', 'Y', 'F', 'P', 'D', 'X', 'B', 'N', 'J', 'Z', 'S', 'Q', 'V', 'H', 'L', 'C', 'K', 'E', 'T'];
+
+        // a) Pedir un número de DNI al usuario y calcular su letra
+        const calcularLetraDNI = () => {
+            const dniInput = prompt("Introduce tu número de DNI (sin letra):");
+            const dni = parseInt(dniInput, 10);
+
+            if (isNaN(dni) || dni < 0) {
+                console.log("Por favor, introduce un número de DNI válido.");
+                return;
+            }
+
+            const resto = dni % 23;
+            const letra = letras[resto];
+            console.log(`La letra correspondiente al DNI ${dni} es: ${letra}`);
+        };
+
+        // b) Pedir al usuario un DNI con letra y comprobar si ese DNI puede ser correcto
+        const verificarDNICorrecto = () => {
+            const dniConLetra = prompt("Introduce tu DNI con letra (ejemplo: 12345678Z):");
+            const dniNumero = dniConLetra.slice(0, -1); // Extraemos la parte numérica quitando la letra
+            const letraProporcionada = dniConLetra.slice(-1).toUpperCase(); // Recogemos la letra
+
+            const dni = parseInt(dniNumero, 10);
+            
+            if (isNaN(dni) || dni < 0 || dniConLetra.length !== 9) {
+                console.log("Por favor, introduce un DNI con formato correcto (8 dígitos + letra).");
+                return;
+            }
+
+            const resto = dni % 23;
+            const letraCorrecta = letras[resto];
+
+            if (letraProporcionada === letraCorrecta) {
+                console.log(`El DNI ${dniConLetra} es correcto.`);
+            } else {
+                console.log(`El DNI ${dniConLetra} es incorrecto. La letra correcta es: ${letraCorrecta}`);
+            }
+        };
+
+        // Ejecutar las funciones
+        calcularLetraDNI();
+        verificarDNICorrecto();
+
+
+    </script>
+
+</body>
+</html>

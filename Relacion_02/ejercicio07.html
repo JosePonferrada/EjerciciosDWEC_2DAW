@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 07 - Arrays & Funciones</title>
+</head>
+<body>
+    
+    <script>
+
+        function comprobarCaso(cadena) {
+            // Comprobar si la cadena está vacía
+            if (cadena.length === 0) {
+                return "La cadena está vacía.";
+            }
+
+            const esMayusculas = cadena === cadena.toUpperCase();
+            const esMinusculas = cadena === cadena.toLowerCase();
+
+            if (esMayusculas) {
+                return "La cadena está formada solo por mayúsculas.";
+            } else if (esMinusculas) {
+                return "La cadena está formada solo por minúsculas.";
+            } else {
+                return "La cadena está formada por una mezcla de mayúsculas y minúsculas.";
+            }
+        }
+
+        // TESTING
+        const texto1 = "HOLA MUNDO";
+        const texto2 = "hola mundo";
+        const texto3 = "Hola Mundo";
+
+        console.log(comprobarCaso(texto1)); // Solo mayúsculas
+        console.log(comprobarCaso(texto2)); // Solo minúsculas
+        console.log(comprobarCaso(texto3)); // Mezcla
+
+
+    </script>
+
+</body>
+</html>

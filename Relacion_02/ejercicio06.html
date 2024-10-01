@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 06 - Arrays & Funciones</title>
+</head>
+<body>
+    
+    <script>
+
+        function menorDeTres(num1, num2, num3) {
+            // Decimos que el primero es el menor y vamos comparando
+            let menor = num1;
+
+            if (num2 < menor) {
+                menor = num2;
+            }
+
+            if (num3 < menor) {
+                menor = num3;
+            }
+
+            return menor;
+        }
+
+        // TESTING
+
+        const numero1 = 5;
+        const numero2 = 3;
+        const numero3 = 8;
+
+        const resultado = menorDeTres(numero1, numero2, numero3);
+        console.log(`El menor de los tres números es: ${resultado}`);
+
+
+    </script>
+
+</body>
+</html>

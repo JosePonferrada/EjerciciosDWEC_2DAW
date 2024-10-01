@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 03 - Arrays & Funciones</title>
+</head>
+<body>
+    
+    <script>
+
+        const multiplosDe11 = [];
+        
+        for (let i = 11; i <= 3000; i += 11) {
+            
+            multiplosDe11.push(i);
+
+        }
+        
+        console.log("Múltiplos de 11 menores de 3000:");
+        console.log(multiplosDe11);
+
+        let sum = 0;
+        for (let i = 0; i < multiplosDe11.length; i++) {
+            sum += multiplosDe11[i];
+        }
+
+        console.log("Suma de los múltiplos de 11 menores de 3000:", sum);
+
+    </script>
+
+</body>
+</html>
