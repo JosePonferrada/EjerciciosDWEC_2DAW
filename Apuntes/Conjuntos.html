@@ -9,7 +9,7 @@
     
     <script>
 
-        // Los datos introducidos en un conjunto(Set) no se pueden repetir
+        // Los datos introducidos en un conjunto(Set) NO se pueden repetir
         // Aunque intentes añadir datos repetidos, no te dará error pero tampoco los mostrará, simplemente los omite
 
         const c1 = new Set(); // Conjunto vacío
@@ -27,6 +27,13 @@
         // Con el método has() podemos comprobar si existe un elemento en el conjunto
         // Con el método delete() podemos borrar un elemento del conjunto
         // Con el método clear() podemos vaciar un conjunto
+
+        // Los sets también se pueden clonar con el operador: [...nombreSet] ó [...structuredClone(nombreSet)]
+
+        // Los WeakSets no aceptan tipos primitivos.
+        const s1 = new WeakSet([1, "A", true]); // ERROR: Uncaught TypeError:
+        // Invalid value used in weak set
+        const s2 = new WeakSet([{ nombre: "Miguel" }, [1, 2]]); // OK 
 
     </script>
 

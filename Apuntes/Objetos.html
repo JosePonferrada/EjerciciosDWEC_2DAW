@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prueba de Objetos</title>
+</head>
+<body>
+    
+    <script>
+
+        const vehiculo1 ={
+            nombre: "coche",
+            // Notación tradicional ES5 (2015 hacia atrás)
+            acelerar:function() { console.log("esto es aumentar velocidad");},
+            // Notación ES6
+            frenar() { console.log("esto es disminuir la velocidad");}
+        }
+        
+        console.log(vehiculo1);
+
+        // Lo que realmente se hace => Función constructora
+        
+        function UnVehiculo (nombre, tipo){
+            // Atributos
+            this.nombre = nombre;
+            this.tipo = tipo;
+            // Métodos
+            this.acelerar = function(){console.log("Esto es aumentar la velocidad")};
+        }
+
+        const coche = new UnVehiculo("Coche","Motor");
+        
+        console.log(coche);
+
+        // Si creamos los objetos de esta manera, se reserva mucha memoria tanto para métodos como propiedades
+
+        // De esta manera solo reservamos para las propiedades  LA MEJOR FORMA
+
+        function UnVehiculo (nombre,tipo){
+            // atributos
+            this.nombre = nombre;
+            this.tipo = tipo;
+        }
+        // Métodos agregados al prototipo de la función constructora y no al prototipo de vehículo
+        UnVehiculo.prototype.acelerar = function(){ console.log("Esto es aumentar la velocidad") };
+        const coche1 = new UnVehiculo("Coche","Motor");
+        
+        console.log(coche1);
+        
+        coche.acelerar();
+
+        // ======================================================= //
+
+        // Creación de objeto con prototipo con función constructora
+    
+        function TaxiRenault (tipoMotor, numeroPasajeros, carga, velocidad) {
+            this.tipoMotor = tipoMotor;
+            this.numeroPasajeros = numeroPasajeros;
+            this.carga = carga;
+            this.velocidad = velocidad;
+        }
+
+        // Añadimos los métodos y prototipo al prototipo
+
+        TaxiRenault.prototype.fabricante = 'Renault, S.A.';
+        TaxiRenault.prototype.direccionFabricante = 'c/R, Paris';
+        TaxiRenault.prototype.getCapacidad = function () {
+        
+            if (tipoMotor == 'Diesel')
+                return 40;
+                else
+                return 35;
+            }
+        TaxiRenault.prototype.variarCarga = function (variacion) {
+            this.carga = this.carga + variacion;
+        }
+        TaxiRenault.prototype.variarVelocidad = function (variacion) {
+            this.velocidad = this.velocidad + variacion;
+        }
+
+        function ejemploObjetos() {
+            var taxi1 = new TaxiRenault(1, 4, 300, 90); var taxi2 = new TaxiRenault(2, 6, 350, 80); var taxi3 = new TaxiRenault(1, 5, 340, 110);
+            console.log('El fabricante del taxi 2 es ' + taxi2.fabricante + ' y la velocidad del taxi 2 es ' + taxi2.velocidad);
+            taxi2.variarVelocidad(-10);
+            console.log('El taxi 2 ha reducido su velocidad y ahora es ' + taxi2.velocidad);
+        }
+
+        ejemploObjetos();
+
+        
+    </script>
+
+</body>
+</html>

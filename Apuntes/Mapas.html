@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prueba de Mapas</title>
+</head>
+<body>
+    
+    <script>
+
+        // Los Set en Javascript son estructuras de datos nativas que permiten introducir datos del tipo clave-valor, 
+        // teniendo en cuenta que las claves no se pueden repetir 
+        // aunque sí los valores. Si añadimos dos elementos con la
+        // misma clave, lo que hará será sobreescribir el valor que
+        // se corresponde con esa clave        
+
+        const map1 = new Map(); // Map({}) (Mapa vacío)
+        const map2 = new Map([[1, "un"]]); // Map({ 1=>"un" })
+        const map3 = new Map([[1, "un"], [2, "dos"], [3, "tres"]]); // Map({ 1=>"un", 2=>"dos", 3=>"tres" })
+
+        console.log(map1);
+        console.log(map2);
+        console.log(map3);
+
+        const map4 = new Map();
+        console.log(map4.size); // 0
+        const map5 = new Map([[1, "uno"], [2, "dos"]]);
+        console.log(map5.size); // 2
+        const map6 = new Map([[1, "uno"], [2, "dos"], [1, "tres"]]);
+        console.log(map6.size); // 2 (El 1->"tres" sobreescribe al 1-> "uno" )
+
+
+        // Método .set para añadir elementos (Si la clave añadida ya existe, sobreescribe el valor)
+        // Método .has para ver si existe un elemento
+        // Método .delete para borrar un elemento, hay que decir la clave
+        // Método .clear para vaciar un mapa
+
+        // Los WeakMaps no permiten datos primitivos como clave
+
+    </script>
+
+</body>
+</html>
