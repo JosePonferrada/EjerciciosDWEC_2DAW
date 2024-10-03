@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prueba de Clases</title>
+</head>
+<body>
+    
+    <script>
+
+        class Animal{
+        
+            //constructor definido con la palabra constructor
+            constructor (nombre,especie){
+            this.nombre = nombre;
+            this.especie = especie;
+        }
+        
+        // métodos de la clase, se definen de forma literal, es decir, dela forma nombremetodo(){}
+        identificar() {console.log("Emito mi sonido característico");}
+        crecer() {console.log("con los años me voy haciendo mayor");}
+        }
+        
+        const gato = new Animal("Garfield","Mamífero"),
+        pato = new Animal("Lucas","Ave");
+        console.log(gato);
+        console.log(pato);
+        gato.identificar();
+
+        <!-- ================== Ejemplo de Herencia ================= -->
+
+        class Gato extends Animal{
+
+            constructor(nombre,especie,subespecie){
+        //invocacion método super para llamar al constructor de la clase de la que hereda
+        super(nombre,especie);
+        this.subespecie=subespecie;
+
+        }
+        
+        // sobreescritura de método identificar
+        identificar() {console.log("miau miau");}
+        // nuevo método
+        reproducir() {console.log("Soy vivíparo");}
+        }
+        
+        const gato1 = new Gato("Garfield","Mamífero","Felino");
+        console.log(gato1);
+        gato1.identificar();
+        gato1.crecer();
+        gato1.reproducir();
+
+        // ========================== Prototipos VS Clases ======================================
+        // ===================== Ejemplo Prototipos =====================
+
+        //objeto con prototipos
+        function Animal2(nombre,especie){
+            // atributos
+            this.nombre=nombre;
+            this.especie=especie;
+        }
+        
+        // métodos agregados al prototipo de la función
+        Animal2.prototype.identificar=function(){console.log("Emito mi sonido característico")};
+        Animal2.prototype.crecer=function(){console.log("con los años me voy haciendo mayor");}
+        
+        //herencia en prototipos
+        //generamos una función constructora Gato para crear un animal gato que heredará de Animal, que tendrá los dos mismos parámetros
+        //que la clase Animal, pero además la subespecie a la que pertenece el animal gato.
+        function Gato2(nombre,especie,subespecie){
+        // crear variable que vamos a llamar super que haría lo mismo que super en clases para asignarle del prototipo padre en el que 
+        // vamos a basar la herencia, pero con el problema de que cada vez que yo cree un objeto Gato, crearía una variable con todo el 
+        // prototipo Animal
+        this.super=Animal2;
+        //Ejecutamos el método super con los parámetros del prototipo Animal
+        this.super(nombre,especie);
+        //añadimos el atributo subespecie del prototipo Gato
+        this.subespecie=subespecie;
+        }
+        //Gato hereda de Animal. Esta es la línea que realmente realiza la herencia.
+        Gato2.prototype=new Animal2();
+        //ahora hacemos que el constructor obtenga todas las propiedades del prototipo padre Animal, así Gato hereda todo lo de Animal
+        Gato2.prototype.constructor=Gato2;
+        //podemos sobreescribir métodos del padre"
+        Gato2.prototype.identificar=function(){console.log("soy un felino dentro de los Animales");}
+        //nuevo método que no existe en la clase Animal
+        Gato2.prototype.reproducir=function(){console.log("Soy vivíparo");}
+        
+        //ya podemos decir que la instancia Garfield es un objeto del prototipo Gato;
+        const garfieldp = new Gato2("Garfield","Mamífero","Felino"),
+        lucasp = new Animal2("Lucas","Ave"),
+        garfield2p = new Gato2("Garfield2","Mamífero","Felino");
+        
+        console.log("Garfield y Lucas como prototipos");
+        console.log(garfieldp);
+        console.log(lucasp);
+        console.log(garfield2p);
+
+        // ====================== Ejemplo Clases =========================
+
+        //Objetos con clases
+        class Animal3{
+        //constructor de la clase llamada constructor
+        constructor(nombre,especie){
+            // atributos
+            this.nombre=nombre;
+            this.especie=especie;}
+            // métodos agregados al prototipo de la función
+            identificar(){console.log("Emito mi sonido característico")};
+            crecer(){console.log("con los años me voy haciendo mayor");};
+        }
+
+        doraemon=new Animal3("Doraemon","mamífero");
+        console.log(doraemon);
+        doraemon.identificar();
+        
+        //herencia con clases
+        class Gato3 extends Animal3{
+            //constructor de la clase
+            constructor(nombre,especie,subespecie){
+            //método super que lo que hace es llamar al constructor de la clase padre
+            super(nombre,especie);
+            //añadimos el atributo subespecie
+            this.subespecie=subespecie;
+        }
+        
+        //podemos sobreescribir métodos del padre
+        identificar(){console.log("soy un perro dentro de los animales");};
+        //nuevo método que no existe en la clase Animal
+        reproducir(){console.log("Soy vivíparo");}
+        }
+        
+        const garfield= new Gato3("Garfield","Mamífero","Felino"),
+        lucas=new Animal3("Lucas","Ave");
+        garfield2= new Gato3("Garfield2","Mamífero","Felino");
+        
+        console.log("Garfield y Lucas como clases");
+        console.log(garfield);
+        console.log(lucas);
+        console.log(garfield2);
+
+        // ================================ GETTERS Y SETTERS ==================================
+
+        class Animal4{
+            //constructor definido con la palabra constructor
+            constructor (nombre,especie){
+                this.nombre=nombre;
+                this.especie=especie;
+            }
+        
+            // métodos de la clase, se definen de forma literal, es decir, de la forma nombremetodo(){}
+            identificar(){console.log("Emito mi sonido característico");}
+            crecer(){console.log("con los años me voy haciendo mayor");}
+        }
+        //herencia
+        class Gato4 extends Animal4{
+            
+            constructor(nombre,especie,subespecie){
+                
+                //invocacion método super para llamar al constructor de la clase de la que hereda
+                super(nombre,especie);
+                this.subespecie = subespecie;
+                this.raza = null;
+            }
+            // sobreescritura de método identificar
+            identificar() {console.log("miau miau");}
+            // nuevo método
+            reproducir() {console.log("Soy vivíparo");}
+            //métodos get y set para obtener y modificar la propiedad raza
+            get getRaza() {return this.raza};
+            set setRaza(raza) {this.raza=raza};
+        }
+        const gato4 = new Gato4("Garfield","Mamífero","Felino");
+        gato4.setRaza = "Pardo";
+        console.log(gato4.getRaza);
+
+        // ================= Destructuración ==================
+
+        const alumno={
+            nombre: "Pepe",
+            apellidos: "Gil Robles",
+            email: "pepe@inventado.com"
+        }
+        
+        let {nombre,apellidos,email} = alumno;
+        console.log(nombre);
+        console.log(apellidos);
+        console.log(email);
+
+    </script>
+
+</body>
+</html>

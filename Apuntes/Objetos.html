@@ -72,23 +72,122 @@
                 else
                 return 35;
             }
+
         TaxiRenault.prototype.variarCarga = function (variacion) {
             this.carga = this.carga + variacion;
         }
+
         TaxiRenault.prototype.variarVelocidad = function (variacion) {
             this.velocidad = this.velocidad + variacion;
         }
 
         function ejemploObjetos() {
-            var taxi1 = new TaxiRenault(1, 4, 300, 90); var taxi2 = new TaxiRenault(2, 6, 350, 80); var taxi3 = new TaxiRenault(1, 5, 340, 110);
+            var taxi1 = new TaxiRenault(1, 4, 300, 90); 
+            var taxi2 = new TaxiRenault(2, 6, 350, 80); 
+            var taxi3 = new TaxiRenault(1, 5, 340, 110);
+            
             console.log('El fabricante del taxi 2 es ' + taxi2.fabricante + ' y la velocidad del taxi 2 es ' + taxi2.velocidad);
+            
             taxi2.variarVelocidad(-10);
+            
             console.log('El taxi 2 ha reducido su velocidad y ahora es ' + taxi2.velocidad);
+        
         }
 
         ejemploObjetos();
 
+
+        <!-- ===================================== Ejemplo herencia de objetos ========================================= -->
+
+        function Animal(nombre,especie){
+        // atributos
+        this.nombre=nombre;
+        this.especie=especie;
+        }
+
+        // métodos agregados al prototipo de la función
+        Animal.prototype.identificar = function() {console.log("Emito mi sonido característico")};
+        Animal.prototype.crecer = function() {console.log("con los años me voy haciendo mayor");}
+        //herencia en prototipos
+        //generamos una función constructora Gato para crear un animal gato que heredará de Animal, que tendrá los dos mismos parámetros
+        //que la clase Animal, pero además la subespecie a la que pertenece el animal gato.
         
+        function Gato(nombre,especie,subespecie){
+        //crear variable que vamos a llamar super que haría lo mismo que super en clases para asignarle del prototipo padre en el que
+        //vamos a basar la herencia, pero con el problema de que cada vez que yo cree un objeto Gato, crearía una variable con todo el
+        //prototipo Animal
+        this.super = Animal;
+        //Ejecutamos el método super con los parámetros del prototipo Animal
+        this.super(nombre,especie);
+        //añadimos el atributo subespecie del prototipo Gato
+        this.subespecie = subespecie;
+        }
+        
+        //Gato hereda de Animal. Esta es la línea que realmente realiza la herencia.
+        Gato.prototype = new Animal();
+        //ahora hacemos que el constructor obtenga todas las propiedades del prototipo padre Animal, así Gato hereda todo lo de Animal
+        Gato.prototype.constructor = Gato;
+        //podemos sobreescribir métodos del padre"
+        Gato.prototype.identificar = function() {console.log("soy un felino dentro de los Animales");}
+        //nuevo método que no existe en la clase Animal
+        Gato.prototype.reproducir = function() {console.log("Soy vivíparo");}
+        
+        //ya podemos decir que la instancia gato es un objeto del prototipo Gato;
+        const gato = new Gato("Garfield","Mamífero","Felino"),
+        pato = new Animal("Lucas","Ave");
+        console.log(gato); 
+        console.log(pato);
+
+        // Esto es un ejemplo de definir objetos de forma literal
+
+        var libro = {
+        páginas: 18,
+        tema: "Infantil",
+        tapa: "dura"
+        };
+
+        // =================================
+
+        var hotel = {
+        nombre: 'Hotel mediaestrella',
+        habitaciones: 137,
+        ocupadas: 30,
+        tipo_habitaciones: ['sencilla', 'doble', 'suite'],
+        wifi: true,
+        verificaDisponibilidad: function(){
+        return this.habitaciones-this.ocupadas;
+        }
+        };
+
+        // La forma más compleja:
+
+        var libro = new Object(); 
+        libro.paginas = 200; 
+        libro.tema= "novela";
+        libro.tapa= "blanda";
+
+        // Otra forma:
+
+        var libro = new Object();
+        libro["paginas"] = 200;
+        libro["tema"]="novela";
+        libro["tapa"]="blanda";
+
+        // Modificación de objetos
+        // Añadimos al objeto interno un nuevo método y así todos los objetos de ese tipo pueden acceder a él
+
+        Date.prototype.getCadenaFecha = function(){
+        var dia = String( this.getDate() );
+        var mes = String( this.getMonth() );
+        var anno = this.getFullYear();
+        if( dia.length == 1 ) { dia = "0" + dia; }
+        if( mes.length == 1 ) {mes = "0" + mes; }
+        return dia + "/" + mes + "/" + anno;
+        }
+        // Para invocarla:
+        var objFecha = new Date( 2011, 4, 3 );
+        alert("Fecha: [" + objFecha.getCadenaFecha() + "]" );
+
     </script>
 
 </body>
