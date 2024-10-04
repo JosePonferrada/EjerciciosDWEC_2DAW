@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 02b - Objetos</title>
+</head>
+<body>
+    
+    <script>
+
+        class Empresa {
+            constructor (nombre, direccion, telefono, NIF) {
+                
+                this.nombre = nombre;
+                this.direccion = direccion;
+                this.telefono = telefono;
+                this.NIF = NIF;
+
+            }
+        }
+
+        class Cliente {
+            constructor (numCliente, DNI, nombre, domicilio, cp, ciudad, provincia) {
+                
+                this.numCliente = numCliente;
+                this.DNI = DNI;
+                this.nombre = nombre;
+                this.domicilio = domicilio;
+                this.cp = cp;
+                this.ciudad = ciudad;
+                this.provincia = provincia;
+
+            }
+        }
+
+        class Producto {
+            constructor (descripcion, precio, cantidad) {
+                
+                this.descripcion = descripcion;
+                this.precio = precio;
+                this.cantidad = cantidad;
+
+            }
+        }
+
+        class DatosFactura {
+            constructor(empresa, cliente, productos) {
+                
+                this.empresa = empresa;
+                this.cliente = cliente;
+                this.productos = productos;
+                this.importeTotal = 0;
+
+            }
+
+            calcularTotalFactura () {
+                let total = 0;
+
+                for (let producto of this.productos) {  // Con este for...of lo que nos permite es asignar cada elemento iterado en la variable producto en este caso
+                                                        // Este for nos permite iterar sobre un array en el que no nos importan los índices
+                    total += producto.precio * producto.cantidad;
+                } 
+
+                this.importeTotal = total;
+
+            }
+
+            mostrarTotalFactura () {
+                console.log("El total de la factura es: " + this.importeTotal + "€");
+            }
+
+        }
+
+        class Factura extends DatosFactura {
+            constructor(empresa, cliente, productos, formaPago) {
+                
+                super(empresa, cliente, productos);
+                this.formaPago = formaPago;
+
+            }
+
+            muestraLineasFactura () {
+
+                this.productos.forEach(producto => {
+                    "Producto: " + producto.descripcion + " - Precio: " + producto.precio + " - Cantidad: " 
+                        + producto.cantidad + " = " + producto.precio * producto.cantidad;
+                });
+            }
+
+        }        
+
+        // Ahora creamos los objetos con los que vamos a trabajar
+
+        const empresa = new Empresa ("SanSong", "Calle Nueva", "957879937", "A12345678");
+        const cliente = new Cliente ("C001", "28828228F", "Pepe Pérez", "Calle El Peso", "14930", "Lucena", "Córdoba");
+        const productos = [
+            new Producto ("Portatil Asus", 450, 3),
+            new Producto ("Teclado Razer", 120, 2),
+            new Producto ("Estanteria Kallax", 60, 1)
+        ];
+
+        const facturaConHerencia = new Factura (empresa, cliente, productos, "En efectivo");
+
+        // TESTING
+
+        facturaConHerencia.calcularTotalFactura();
+        facturaConHerencia.muestraLineasFactura();
+        facturaConHerencia.mostrarTotalFactura();
+
+    </script>
+
+</body>
+</html>

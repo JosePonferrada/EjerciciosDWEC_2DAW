@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 02a - Objetos</title>
+</head>
+<body>
+    
+    <script>
+
+        const factura = { // Objeto literal
+
+            empresa: {
+                
+                nombre: "SanSong",
+                direccion: "Calle del Pan",
+                telefono: "938999999",
+                NIF: "A12345678"
+            }, 
+
+            cliente: {
+
+                numeroCliente: "C001",
+                DNI: "12345678Z",
+                nombre: "Juan Pérez",
+                domicilio: "Calle Horno, 33",
+                cp: "14940",
+                ciudad: "Cabra",
+                provincia: "Córdoba"
+            }, 
+
+            productos: [
+                {descripcion: "iPhone 15", precio: 1200, cantidad: 2}, 
+                {descripcion: "Microondas Bosch", precio: 200, cantidad: 1},
+                {descripcion: "Monitor BenQ", precio: 700, cantidad: 3}
+            ], 
+
+            importeTotal: 0,
+            formaDePago: "Tarjeta de crédito",
+
+            // Funciones
+
+            calcularTotalFactura() {
+                let total = 0;
+
+                for (let producto of this.productos) {  // Con este for...of lo que nos permite es asignar cada elemento iterado en la variable producto en este caso
+                                                        // Este for nos permite iterar sobre un array en el que no nos importan los índices
+                    total += producto.precio * producto.cantidad;
+                } 
+
+                this.importeTotal = total;
+
+            },
+
+            mostrarTotalFactura() {
+                console.log("El importe total de la factura es: " + this.importeTotal + "€");
+            }
+
+        };  // Aquí termina factura
+
+        // TESTING
+
+        factura.calcularTotalFactura();
+        factura.mostrarTotalFactura();
+
+    </script>
+
+</body>
+</html>
