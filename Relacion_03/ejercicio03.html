@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 03 - Objetos</title>
+</head>
+<body>
+    
+    <script>
+
+        class Cuadrado {
+            constructor(lado) { // Constructor
+                this.lado = lado;  
+            }
+
+            // Métodos 
+
+            calcularPerimetro() {
+                return 4 * this.lado;
+            }
+
+            calcularArea() {
+                return this.lado * this.lado;
+            }
+
+        }
+
+        class Cubo extends Cuadrado {
+            constructor(lado) {
+                super(lado);
+            }
+
+            // Métodos 
+
+            calcularPerimetro() {
+                return 12 * this.lado;
+            }
+
+            calcularArea() {
+                return 6 * super.calcularArea(); // Gracias a la clase cuadrado podemos tener el área y multiplicar por las 6 caras de un cubo
+            }
+
+            calcularVolumen() {
+                return Math.pow(this.lado, 3);
+            }
+
+        }
+
+        // TESTING
+
+        const cuadrado = new Cuadrado(5);
+        console.log("El perímetro del cuadrado es: " + cuadrado.calcularPerimetro());
+        console.log("El área del cuadrado es: " + cuadrado.calcularArea());
+
+        const cubo = new Cubo(5);
+        console.log("El perímetro del cubo es: " + cubo.calcularPerimetro());
+        console.log("El área del cubo es: " + cubo.calcularArea());
+        console.log("El volumen del cubo es: " + cubo.calcularVolumen());
+
+    </script>
+
+</body>
+</html>
