@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 01 - Objetos</title>
+</head>
+<body>
+    
+    <script>
+
+        Date.prototype.getCuatriFecha = function(){
+                
+            var dia = String( this.getDate() );
+            var mes = String( this.getMonth() );
+            var anno = this.getFullYear();
+            var cuatri = new String("");
+
+            if ( dia.length == 1 ) { dia = "0" + dia; }
+            
+            if ( mes.length == 1 ) {mes = "0" + mes; }
+            
+            if (mes < 5) {
+                cuatri = "primer";
+            } else if (mes <9) {
+                cuatri = "segundo";
+            } else  { 
+                cuatri = "tercer";
+            }
+            
+            return "Estamos en el día " + dia + " del mes " + mes + " del " + cuatri + " cuatrimestre del año " + anno;
+            
+        }
+
+        // For testing
+
+        var objFecha1 = new Date (2024, 5, 12);
+        console.log("Fecha: " +  objFecha1.getCuatriFecha());
+
+    </script>
+
+</body>
+</html>
