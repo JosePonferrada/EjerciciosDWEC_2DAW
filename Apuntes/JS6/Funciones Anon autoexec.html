@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prueba de funciones anónimas autoejecutables</title>
+</head>
+<body>
+    
+    <script>
+
+        // El último paréntesis es el que hace la función autoejecutable
+
+        (function() {
+            console.log("Ejecutado directamente en la primera función autoejecutable");
+            document.write("Ejecutado directamente en la primera función autoejecutable"+"<br>")
+        })();
+        
+        var funcionAnonimaAutoejecutable = (function () {
+        console.log("Ejecutado directamente en la segunda función autoejecutable");
+        document.write("Ejecutado directamente en la segunda función autoejecutable");
+        var a=3
+        return a;
+        })();
+
+        //console.log(a); //a no está definida
+        console.log(funcionAnonimaAutoejecutable)
+
+    </script>
+
+</body>
+</html>

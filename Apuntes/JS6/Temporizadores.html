@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prueba de temporizadores</title>
+</head>
+<body>
+    
+    <script>
+
+        // Con setTimeout() se ejecuta algo solo por el tiempo asignado
+        // Con setInterval() se ejecuta algo periódicamente con el tiempo asignado
+
+        // Para detener los temporizadores se usa clearTimeout() ó clearInterval()
+
+        setTimeout(()=>{console.log("Esto se ejecuta una sola vez a los 3 segundos");},3000);
+        setInterval(()=>{console.log("Esto se ejecuta indefinidamente cada segundo");},1000);
+
+        var temporizador1 = setTimeout(()=>{document.write("Esto se ejecuta una sola vez a los 3 segundos"+"<br>");},3000);
+        var temporizador2 = setInterval(()=>{document.write("Esto se ejecuta indefinidamente cada segundo"+"<br>");},1000);
+        
+        clearTimeout(temporizador1);
+        clearInterval(temporizador2);
+
+    </script>
+
+</body>
+</html>
