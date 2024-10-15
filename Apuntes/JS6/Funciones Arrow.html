@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prueba de Funciones Arrow</title>
+</head>
+<body>
+    
+    <script>
+
+        // Sin argumentos
+
+        let numero=()=>{ console.log("hola") };
+        numero();
+
+        // Con un solo parámetro OPCIONAL poner paréntesis
+
+        var nombres = ['pepe', 'ana'];
+        nombres.forEach(parametro=>{
+        document.write('nombre: '+parametro
+        +"<br>");}
+        );
+
+        // Con múltiples argumentos SIEMPRE con paréntesis
+
+        var suma=(a,b)=>{ return a+b;}
+        alert(suma(3,5));
+
+        // Estas funciones no capturan el objeto this del contexto en el que se encuentran, capturan el objeto Object
+
+        // Usando una función declarada sí que captura el objeto this del contexto
+
+        const alumno={ nombre: "pepe",
+            apellidos: "Gil Robles",
+            email: "pepe@inventado.com",
+            matricular: function (){console.log(this);}
+            
+        }
+        
+        alumno.matricular();
+
+        // En cambio, usando una función flecha captura el padre del objeto en el que está  (Aquí captura Window)
+
+        const alumno2={ nombre: "pepe",
+            apellidos: "Gil Robles",
+            email: "pepe@inventado.com",
+            matricular: ()=>{console.log(this);}
+        }
+        alumno2.matricular();
+
+        // Para enviar parámetros por defecto en una función
+
+        function saludar(nombre="miguel", apellidos="gil pérez",
+            apellnom = nombre+ ' '+apellidos){
+            document.write('Hola, ' + apellnom);
+        };
+
+        saludar(); // Saluda a los valores por defecto
+        saludar('Juan'); // Saluda a Juan
+        saludar('Pedro', 'Luz Liz'); // Saluda a Pedro Luz Liz
+
+    </script>
+    
+</body>
+</html>

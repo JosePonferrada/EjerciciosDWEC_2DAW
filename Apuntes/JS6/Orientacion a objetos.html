@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prueba de orientación a objetos</title>
+</head>
+<body>
+    
+    <script>
+
+        // Un método estático es aquel que se puede invocar sin tener que crear 
+        // una instancia de una clase. Se crean anteponiendo la palabra static a
+        // la definición del método.
+
+        class Punto {
+            constructor(x, y) {
+            this.x = x;
+            this.y = y;
+        }
+            static distancia(a, b) {
+                const dx = a.x - b.x;
+                const dy = a.y - b.y;
+                return Math.sqrt(dx * dx + dy * dy);
+            }
+        }
+        const p1 = new Punto(1, 1);
+        const p2 = new Punto(3, 3);
+        alert(Punto.distancia(p1, p2));        
+
+        // Chaining (Encadenar métodos)
+
+        var coche1 = {
+            marca: "Volvo",
+            modelo: "XC60",
+            velocidad: 0,
+            acelerar:function(aceleracion) { this.velocidad += aceleracion;
+            return coche1;},
+            frenar:function(desaceleracion) { this.velocidad -= desaceleracion;
+            return coche1;}
+        }
+        console.log(coche1.acelerar(20).frenar(5)); // Acelera 20 y frena 5
+
+    </script>
+
+</body>
+</html>
