@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prueba de manejo de atributos</title>
+</head>
+<body>
+    
+    <a href="https://www.marca.es" id="enlace" data-tema="deportes" data-subtema="baloncesto"
+        style="background-color:yellow;color:green">Ir al Marca</a> <!-- Con el data-... podemos personalizar un atributo -->
+    
+    <script>
+
+        const $imagen=document.getElementById("enlace"); // Cuando la variable apunta a un elemento del DOM se suele declarar con un "$" delante
+        
+        // Acceder a atributos del documento html con notación del punto
+        console.log(document.documentElement.lang);
+        
+        // Con getAtribute
+        console.log(document.documentElement.getAttribute("lang"));
+        
+        // Acceder a atributos de un elemento html
+        console.log($imagen.id);
+        console.log($imagen.getAttribute("id"));
+        
+        // Asignar valor a un atributo del documento y de un elemento html
+        document.documentElement.lang="es";
+        console.log(document.documentElement.lang);
+        document.documentElement.setAttribute("lang","it");
+        console.log(document.documentElement.lang);
+        
+        // Acceso a data-atributes mediante notación punto
+        // Para acceder al 
+        console.log($imagen.dataset.tema); 
+        console.log($imagen.dataset); // Devuelve un mapa con las claves + valor
+        
+        // Mediante getAttribute (de la misma forma que atributos normales)
+        console.log($imagen.getAttribute("data-tema"));
+        console.log($imagen.getAttribute("data-subtema"));
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pruebas con métodos getElementsBy...</title>
+</head>
+<body>
+    
+    <div id="div1" name="nombreDiv" class="claseDiv">
+
+        <p name="primero" id="primerParrafo">Primer párrafo</p>
+        <p name="segundo" id="segundoParrafo">Segundo párrafo</p>
+        <p name="tercero" id="tercerParrafo">Tercer párrafo</p>
+
+    </div>
+
+    <script>
+
+        // console.log(window.document); // Cuando imprimimos esto nos muestra el objeto document (No hace falta poner window porque es el objeto padre)
+
+        // Con el método getElementsByTagName() obtendremos todos los elementos que pongamos como argumento del método
+
+        var d = document;
+
+        var divs = d.getElementsByTagName("div"); // Para buscar los divs
+        var parrafos = d.getElementsByTagName("p"); // Para buscar los párrafos
+
+        console.log(divs); // Devuelve un HTMLCollection
+        console.log(parrafos);
+
+        console.log(parrafos[1]); // Mostramos el segundo elemento de los párrafos
+        console.log(parrafos.length); 
+
+        // Con el método getElementsByName() obtendremos todos los elementos que pongamos como argumento del método
+
+        var divs1 = d.getElementsByName("nombreDiv"); // El argumento es caseSensitive
+        var parrafos1 = d.getElementsByName("primero");
+
+        console.log(divs1); // Devuelve todos los nodos que coincidan
+        console.log(parrafos1);
+
+        var divs2 = d.getElementsByClassName("claseDiv");
+
+        console.log(divs2);
+
+        // Con el método getElementById() se obtiene el primer elemento que tenga el id del argumento
+
+        var divs3 = d.getElementById("div1");
+
+        console.log(divs3);
+
+        
+
+    </script>
+    
+</body>
+</html>

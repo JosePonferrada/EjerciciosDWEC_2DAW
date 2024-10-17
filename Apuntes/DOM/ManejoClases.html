@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prueba de manejo de className</title>
+</head>
+<body>
+    
+    <style>
+        .clase1{ background-color: "grey"; color:"pink"; }
+        .clase2{ background-color: "brown"; color:"blue"; }
+    </style>
+    
+    <a href="https://www.marca.es" id="enlace" data-tema="deportes"
+        style="background-color:yellow;color:green" class="clase1" >Ir al Marca</a>
+    
+    <script>
+        const $imagen=document.getElementById("enlace");
+    
+        // Acceder a la clase de un elemento
+        console.log($imagen.className);
+    
+        // Acceder a la lista de clases de un elemento
+        console.log($imagen.classList);
+    
+        // Añadir una clase a un elemento
+        $imagen.classList.add("clase2");
+        console.log($imagen.classList);
+    
+        // Eliminar una clase de un elemento
+        $imagen.classList.remove("clase1");
+        console.log($imagen.classList);
+    
+        // Comprobar si un elemento tiene una clase
+        console.log($imagen.classList.contains("clase1"),$imagen.classList.contains("clase2"));
+    
+        // Asignar una clase si no la tiene o retirarla si la tiene
+        $imagen.classList.toggle("clase1");
+        $imagen.classList.toggle("clase2");
+        console.log($imagen.classList.contains("clase1"),$imagen.classList.contains("clase2"));
+    
+        // Reemplazar una clase por otra
+        console.log($imagen.classList);
+        $imagen.classList.replace("clase1","clase2");
+        console.log($imagen.classList);
+    
+    </script>
+        
+
+</body>
+</html>

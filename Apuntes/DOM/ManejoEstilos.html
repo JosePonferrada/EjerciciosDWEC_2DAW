@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prueba de manejo de estilos</title>
+</head>
+<body>
+    
+    <a href="https://www.marca.es" id="enlace" data-tema="deportes"
+    style="background-color:yellow;color:green">Ir al Marca</a>
+    
+    <script>
+    
+        const $imagen=document.getElementById("enlace");
+    
+        //Acceder al conjunto de estilos de un elemento (observar la diferencia en la notación)
+        console.log($imagen.style);
+        console.log($imagen.getAttribute("style"));
+    
+        //Acceder todos los estilos aplicables a un elemento
+        console.log(getComputedStyle($imagen));
+    
+        //Acceder a un estilo concreto de un elemento con la notación punto
+        console.log($imagen.style.backgroundColor);
+    
+        //Acceder a un estilo concreto con getPropertieValue
+        console.log(getComputedStyle($imagen).getPropertyValue("color"));
+    
+        //Asignar un estilo con la notación punto
+        $imagen.style.backgroundColor="red";
+        console.log($imagen.style.backgroundColor);
+    
+        //Asignar un estilo con setPropertieValue
+        $imagen.style.setProperty("color","blue");
+        console.log($imagen.style.color);
+    
+    </script>
+
+</body>
+</html>

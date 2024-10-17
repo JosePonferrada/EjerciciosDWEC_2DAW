@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prueba de acceso a atributos</title>
+</head>
+<body>
+    
+    <p id="parrafo"class="normal"></p>
+    <a id="enlace" href="http://www...com">Enlace</a>
+    <img id="imagen" style="margin:2px; border:2px;" src=“imagen.jpg"/>
+    <p id="parrafo2" style="font-weight: bold;">...</p>
+
+    <script>
+
+        var imagen = document.getElementById("imagen");
+        console.log(imagen.style.margin);
+
+        var parrafo = document.getElementById("parrafo"); 
+        console.log(parrafo.className);
+
+        var parrafo2 = document.getElementById("parrafo2");
+        console.log(parrafo2.style.fontWeight);
+
+        var enlace = document.getElementById("enlace");
+        console.log(enlace.href);
+
+    </script>
+
+</body>
+</html>
