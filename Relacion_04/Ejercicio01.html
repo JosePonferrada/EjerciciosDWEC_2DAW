@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 01 - Relación 04</title>
+</head>
+<body>
+    
+    <script>
+
+        function invierteCadena(cadena) {
+            
+            // var cadena = "Miguel Angel";
+
+            var cadenaEnArray = Array.from(cadena); // Array.from crea una nueva instancia, por lo que no es necesario usar el operador Spread
+
+            console.log(cadenaEnArray);
+
+            // var cadenaInvertida = cadenaEnArray;
+
+            var cadenaInvertida = cadenaEnArray.reverse(cadena);
+
+            console.log(cadenaInvertida);
+
+        }
+
+        // Testing 
+
+        const cadena2 = "Miguel Angel"; // Establecemos la cadena
+
+        invierteCadena(cadena2); // Llamamos a la función
+
+    </script>
+
+</body>
+</html>
