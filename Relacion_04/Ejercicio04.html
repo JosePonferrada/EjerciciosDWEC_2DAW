@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 04 - Relación 04</title>
+</head>
+<body>
+
+    <script>
+
+        function checkCapicua (num1) {
+            return num1 == num1.toString().split('').reverse().join('');
+        }
+
+        var num1 = 489;
+        
+        checkCapicua(num1) ? console.log("Es Capicúa") : console.log("No es capicúa");
+
+    </script>
+
+</body>
+</html>

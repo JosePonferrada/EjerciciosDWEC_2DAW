@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 03 - Relación 04</title>
+</head>
+<body>
+    
+    <script>
+
+        function eliminaSubcadena(cadena, subcadena) {
+
+            var newCadena = cadena.replaceAll(subcadena, ""); // Para reemplazar todas las ocurrencias debemos usar el parámetro g cuando usemos replace o usar replaceAll
+            
+            console.log(newCadena);
+
+        }
+
+        var cadena = "xyz1, xyz2, xyz3, xyz4 y xyz5";
+        var subcadena = "xyz";
+
+        eliminaSubcadena(cadena, subcadena);
+
+    </script>
+
+</body>
+</html>
