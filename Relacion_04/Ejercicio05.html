@@ -10,8 +10,27 @@
     <script type="module">
         
         import moment from 'https://cdn.jsdelivr.net/npm/moment@2.29.1/dist/moment.min.js'; // Importamos la librería moment
+        // La propia librería recomienda usar dayjs para nuevos proyectos o las APIs nativas de JS
 
-        console.log(moment.locale());
+        moment.locale("es");
+
+        function calculaAniosDiferencia(fecha) {
+            
+            const fechaElegida = moment(fecha); // Así se convierte la fecha en un objeto Moment
+
+            const fechaActual = moment(); // Guardamos la fecha actual
+
+            const diferenciaEnAnios = fechaActual.diff(fechaElegida, 'years');
+
+            return diferenciaEnAnios; // Devolvemos la diferencia
+    
+        }
+
+        // TESTING
+
+        const fechaTest = "2000-03-18";
+
+        console.log(`Han pasado ${calculaAniosDiferencia(fechaTest)} años desde el ${moment(fechaTest).format('DD/MM/YYYY')}`);
 
       </script>
       

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 07 - Relación 04</title>
+</head>
+<body>
+    
+    <script>
+
+        let array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+        
+        let mayorMenor = (array) => {
+            let mayor = array[0];
+            let menor = array[0];
+            for (let i = 0; i < array.length; i++) {
+                if (array[i] > mayor) {
+                    mayor = array[i];
+                }
+                if (array[i] < menor) {
+                    menor = array[i];
+                }
+            }
+            return [mayor, menor];
+        }
+
+    </script>
+
+</body>
+</html>

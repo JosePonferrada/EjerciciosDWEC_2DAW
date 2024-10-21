@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 06 - Relación 04</title>
+</head>
+<body>
+    
+    <script>
+
+        function cuentaVocalesConsonantes(cadena) {
+
+            let numVocales = 0;
+            let numConsonantes = 0;
+
+            for (const letra of cadena) {
+                
+                if (/[a-zA-Z]/.test(letra)) { // Comprobamos si es una letra
+
+                    if (/[aeiouAEIOU]/.test(letra)) { // Si es una de esas letras se suma una vocal
+
+                        numVocales++;
+
+                    } else {
+
+                        numConsonantes++;
+
+                    }
+
+                }
+
+            }
+
+            console.log("Vocales: " + numVocales + ", Consonantes: " + numConsonantes);
+            
+        }
+
+        // TESTING
+
+        const cadenaTest = "Hola Mundo";
+
+        cuentaVocalesConsonantes(cadenaTest);
+
+    </script>
+
+</body>
+</html>
