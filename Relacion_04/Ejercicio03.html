@@ -11,11 +11,21 @@
 
         function eliminaSubcadena(cadena, subcadena) {
 
-            var newCadena = cadena.replaceAll(subcadena, ""); // Para reemplazar todas las ocurrencias debemos usar el parámetro g cuando usemos replace o usar replaceAll
+            var expresion = new RegExp(subcadena, "g"); // Creamos una expresión regular con la subcadena que queremos eliminar para luego usar la expresión 
+                                                        // regular en el método replace
+
+            var newCadena = cadena.replace(expresion, ""); // Reemplazamos la subcadena por un string vacío
+            
+            // Otro modo de hacerlo sería con el método replaceAll
+            
+//            var newCadena = cadena.replaceAll(subcadena, ""); // Para reemplazar todas las ocurrencias debemos usar el parámetro g cuando usemos replace o 
+                                                                // usar replaceAll
             
             console.log(newCadena);
 
         }
+
+        // Testing
 
         var cadena = "xyz1, xyz2, xyz3, xyz4 y xyz5";
         var subcadena = "xyz";

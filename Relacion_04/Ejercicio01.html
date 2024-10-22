@@ -13,13 +13,14 @@
             
             // var cadena = "Miguel Angel";
 
-            var cadenaEnArray = Array.from(cadena); // Array.from crea una nueva instancia, por lo que no es necesario usar el operador Spread
+            var cadenaEnArray = Array.from(cadena); // El método Array.from crea una nueva instancia
 
             console.log(cadenaEnArray);
 
             // var cadenaInvertida = cadenaEnArray;
 
-            var cadenaInvertida = cadenaEnArray.reverse(cadena);
+            var cadenaInvertida = [...cadenaEnArray].reverse(cadena); // El método reverse() apunta a la cadena original, por lo que debemos usar el 
+                                                                        // operador Spread para crear una nueva instancia
 
             console.log(cadenaInvertida);
 

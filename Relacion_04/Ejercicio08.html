@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 08 - Relación 04</title>
+</head>
+<body>
+
+    <script>
+
+        function paresImpares(array){
+
+            let pares = [];
+            let impares = [];
+
+            for (let i = 0; i < array.length; i++) {
+
+                if (array[i] % 2 == 0){
+
+                    pares.push(array[i]);
+
+                } else {
+
+                    impares.push(array[i]);
+
+                }
+            }
+
+            let arrays = {pares, impares};
+
+            return arrays;
+
+        }
+
+        // Testing
+
+        let array = [1,2,3,4,5,6,7,8,9,0];
+        console.log(paresImpares(array));
+
+    </script>
+
+</body>
+</html>

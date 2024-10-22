@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 09 - Relación 04</title>
+</head>
+<body>
+    
+    <script>
+
+        /**
+        * Programa una función que dado un array de números devuelva un objeto con dos arrays, el primero 
+        contendrá el contenido del array original ordenado en forma ascendente y el segundo, el contenido del 
+        array original ordenado de forma descendiente. 
+        Ej ascendenteDescendente(([3, 5,3,8,6]) devolverá { asc: [3,3,5,6,8], desc: [8,6,5,3,3] }. 
+        */
+
+        function ascendenteDescendente(array){
+
+            let ascendente = [...array]; // Creamos una copia del array original
+            let descendente = [...array]; // Creamos una copia del array original
+
+            for (let i = 0; i < ascendente.length; i++) {
+                
+                for (let j = 0; j < ascendente.length; j++) {
+                    
+                    if (ascendente[i] < ascendente[j]) {
+                        
+                        let aux = ascendente[i];
+                        ascendente[i] = ascendente[j];
+                        ascendente[j] = aux;
+
+                    }
+
+                    if (descendente[i] > descendente[j]) {
+                        
+                        let aux = descendente[i];
+                        descendente[i] = descendente[j];
+                        descendente[j] = aux;
+
+                    }
+
+                }
+
+            }
+
+        }
+
+    </script>
+
+</body>
+</html>
