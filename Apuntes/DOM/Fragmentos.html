@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prueba de Fragmentos</title>
+</head>
+<body>
+    
+    <!-- Un fragmento se usa para no tener que estar insertando
+        continuamente en el DOM, sino que lo que haremos será insertar en
+        un espacio virtual llamado fragmento, y, después será el fragmento el
+        que insertaremos ya en el DOM, con lo que ganaremos rapidez y eficacia.
+    -->
+
+    <script>
+        
+        // Insertar en fragmento
+        const alumnos=["Ana","Antonio","Belén","Conchi","Daniel","Eugenio","Felipe",
+        "Gabriela","Higinio","Isabel","Juan","Laura","Miguel","Pepe","Raul","Susana"];
+        var lista=document.createElement("ul");
+        var fragmento=document.createDocumentFragment();
+        
+        // Añadiremos nodos al fragmento
+        alumnos.forEach(alumno =>{
+        const li=document.createElement("li");
+        li.innerHTML=alumno;
+        fragmento.appendChild(li);
+        })
+        
+        // Agregamos el fragmento a la lista y ya la lista al body del documento
+        document.write("<h1>Alumnos del ciclo</h1>");
+        lista.appendChild(fragmento);
+        document.body.appendChild(lista);
+        console.log(document.querySelector("ul"));
+        </script>
+        
+
+</body>
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prueba de Manejo de nodos</title>
+</head>
+<body>
+    
+    <!-- Hay dos formas de insertar contenido dinámicamente en un documento HTML
+        1.- Creando un nuevo nodo
+        2.- Modificando el contenido de un nodo existente
+        -->
+
+        <section id="seccion" class="claseSeccion">
+            <div id="parrafos" class="clasediv">
+                <p id="parrafo1"> Párrafo primero para aprender DOM Traversing</p>
+                <p id="parrafo2"> Párrafo segundo para aprender DOM Traversing</p>
+                <p id="parrafo3"> Párrafo terdero para aprender DOM Traversing</p>
+            </div>
+        </section>
+        
+        <script>
+        
+            // Insertar nodos de dos formas distintas: primera en forma de nodo real
+            var nodoParrafo = document.createElement("p");
+            var textoParrafo = document.createTextNode("Este es otro párrafo insertado");
+            nodoParrafo.appendChild(textoParrafo);
+            document.getElementById("parrafos").appendChild(nodoParrafo);
+            document.getElementById("parrafos").lastElementChild.setAttribute("id","parrafo4");
+            console.log(document.getElementById("parrafos"));
+
+            // Insertar contenido modificando contenido de un nodo
+            var nodoParrafo1 = document.createElement("p");
+            nodoParrafo1.innerHTML = "Este es otro párrafo ´más insertado";
+            document.getElementById("parrafos").appendChild(nodoParrafo);
+            console.log(document.getElementById("parrafos"));
+        
+
+            // ====================================================================================================
+
+            // Insertar un nodo con insertarAdjacentElement
+
+            /**
+            * - Posicion: 
+            * 
+            • 'beforebegin': Antes del elementoObjetivo.
+            • 'afterbegin': Dentro del elementoObjetivo, antes de su primer hijo.
+            • 'beforeend': Dentro del elementoObjetivo, después de su último hijo.
+            • 'afterend': Después del elementoObjetivo.
+            *
+            */
+
+
+            <section id="seccion" class="claseSeccion">
+                <div id="parrafos" class="clasediv">
+                    <p id="parrafo1"> Párrafo primero para aprender DOM Traversing </p>
+                    <p id="parrafo2"> Párrafo segundo para aprender DOM Traversing </p>
+                    <p id="parrafo3"> Párrafo terdero para aprender DOM Traversing</p>
+                </div>
+            </section>
+
+            var $parrafo2=document.getElementById("parrafo2");
+            var $seccion=document.getElementById("seccion");
+            var $parrafoNuevoAntes = document.createElement("p");
+            $parrafoNuevoAntes.innerHTML="Este es el nuevo párrafo insertado antes de párrafo2";
+
+            var $parrafoNuevoDespues = document.createElement("p");
+            $parrafoNuevoDespues.innerHTML="Este es el nuevo párrafo insertado después de párrafo2";
+            
+            var $parrafoNuevoAntesPrimerHijo = document.createElement("p");
+            $parrafoNuevoAntesPrimerHijo.innerHTML="Nuevo párrafo insertado antes del primer hijo del párrafo2";
+            
+            var $parrafoNuevoDespuesUltimoHijo = document.createElement("p");
+            $parrafoNuevoDespuesUltimoHijo.innerHTML="Nuevo párrafo insertado antes del primer hijo del párrafo2";
+            
+            $parrafo2.insertAdjacentElement("beforebegin", $parrafoNuevoAntes);
+            $parrafo2.insertAdjacentElement("afterend", $parrafoNuevoDespues);
+            $seccion.insertAdjacentElement("afterbegin",$parrafoNuevoAntesPrimerHijo);
+            $seccion.insertAdjacentElement("beforeend",$parrafoNuevoDespuesUltimoHijo);
+            console.log(document.getElementById("parrafos"));
+
+            // Para eliminar un nodo se utiliza removeChild()
+
+        </script>
+            
+
+</body>
+</html>

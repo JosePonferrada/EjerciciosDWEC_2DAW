@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prueba de DOM Traversing</title>
+</head>
+<body>
+    
+    <section id="seccion" class="claseSeccion">
+        <div id="parrafos" class="clasediv">
+            <p id="parrafo1"> Párrafo primero para aprender DOM Traversing </p>
+            <p id="parrafo2"> Párrafo segundo para aprender DOM Traversing </p>
+            <p id="parrafo3"> Párrafo tercero para aprender DOM Traversing</p>
+        </div>
+    </section>
+
+    <script>
+    
+        $divparrafos=document.getElementById("parrafos");
+        console.log($divparrafos);
+    
+        // Acceder a los nodos hijos de un elemento
+        $hijosDiv=document.querySelector(".clasediv").children;
+        console.log( $hijosDiv);
+        console.log($hijosDiv[0]);
+    
+        // Acceder al nodo padre de un elemento
+        console.log(document.getElementById("seccion"));
+        console.log(document.getElementById("parrafos").parentElement);
+    
+        // Acceder al primer y al último hijo
+        console.log(document.getElementById("parrafos").firstElementChild);
+        console.log(document.getElementById("parrafos").lastElementChild);
+    
+        // Acceder al hermano anterior y posterior
+        console.log(document.getElementById("parrafo2").previousElementSibling);
+        console.log(document.getElementById("parrafo2").nextElementSibling);
+    
+        // Acceder al padre más cercano del selector dado
+        console.log(document.getElementById("parrafo3").closest("#seccion"));
+        console.log(document.getElementById("parrafo3").closest(".claseSeccion"));
+
+    </script>
+
+
+</body>
+</html>

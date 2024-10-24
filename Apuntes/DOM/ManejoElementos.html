@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prueba de Manejo de Elementos</title>
+</head>
+<body>
+    
+    <p id="parrafo1"> Párrafo primero para aprender manejo de elementos </p>
+    <p id="parrafo2"> Párrafo segundo para aprender manejo de elementos </p>
+
+    <script>
+
+        let $parrafo1=document.getElementById("parrafo1");
+        let texto=`<p id="parrafo3">Párrafo tercero para aprender manejo de elementos</p>
+        <p id="parrafo4">Párrafo cuarto para aprender manejo de elementos</p>
+        <ul>
+        <li>1º DAW</li>
+        <li>2º DAW</li>
+        </ul>`;
+
+        // Mostrar elemento html y su contenido textual
+        console.log($parrafo1,$parrafo1.innerText);
+
+        // Cambiar contenido textual del elemento html
+        let $textoElemento=$parrafo1.innerText;
+        $parrafo1.innerText=texto;
+        console.log($parrafo1);
+
+        $parrafo1.innerText=$textoElemento;
+        console.log($parrafo1);
+        
+        $parrafo1.textContent=texto;
+        console.log($parrafo1);
+        
+        $parrafo1.innerText=$textoElemento;
+        console.log($parrafo1);
+        
+        $parrafo1.innerHTML=texto;
+        console.log($parrafo1);
+
+        // Sustituye el párrafo 1 por el 3 y el 4 (se puede comprobar en element del navegador)
+        $parrafo1.outerHTML=texto;
+        console.log($parrafo1);
+
+    </script>
+
+
+</body>
+</html>
