@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 11 - Relación 04</title>
+</head>
+<body>
+    
+    <script>
+
+        /* 
+        Crear el siguiente ejercicio de herencia en Orientación a objetos en javascript. 
+        Crear la clase habitación con los siguientes atributos: 
+        - número : número de habitación 
+        - capacidad: número de personas que la habitarán (1,2,3,4,5) 
+        - servicios: número de servicios disponibles en la habitación 
+        
+        Crear los siguientes métodos: 
+        - calcularPrecio(capacidad,servicios)  que  calcule  el  precio  de  cada  habitación,  sabiendo  que 
+        por cada persona se pagarían 24 € y adicionalmente por cada servicio 3€ 
+        Crear  la  clase  habitacionHotel  que  calcule  el  precio  de  una  habitación  en  un  hotel  determinado,  que 
+        herede de habitación los atributos capacidad y servicios y que además contenga: 
+        - director: director del hotel 
+        - categoría: número de estrellas del hotel 
+        - numHabsEstandar: número habitaciones estándar del hotel, sabiendo que estas habitaciones 
+        tienen capacidad para 2 personas y con 2 servicios básicos. 
+        - numHabsSuite:  número  de  habitaciones  suite  del  hotel,  sabiendo  que  estas  habitaciones 
+        tienen capacidad para 2 personas con los 5 servicios básicos. 
+        Crear los siguientes métodos: 
+        - calcularPrecio(capacidad,servicios,categoría) que calcule el precio de esa habitación en ese 
+        hotel concreto sabiendo que además del precio de la habitación por capacidad y servicios se 
+        incrementará un 5 % por cada estrella a partir de la primera, es decir, en un hotel de 2 estrellas 
+        el precio sería el de la habitación + 10% de ese precio. 
+        - calcularRecaudacionHotel que calcule el total que recaudaría el hotel si tuviese todas las 
+        habitaciones estándar y suites ocupadas.
+        */
+
+        class Habitacion {
+
+            constructor(numero, capacidad, servicios) {
+                this.numero = numero;
+                this.capacidad = capacidad;
+                this.servicios = servicios;
+            }
+
+            calcularPrecio(capacidad, servicios) {
+                return (capacidad * 24) + (servicios * 3);
+            }
+
+        }
+
+        class HabitacionHotel extends Habitacion {
+
+            constructor(numero, capacidad, servicios, director, categoria, numHabsEstandar, numHabsSuite) {
+                super(numero, capacidad, servicios);
+                this.director = director;
+                this.categoria = categoria;
+                this.numHabsEstandar = numHabsEstandar;
+                this.numHabsSuite = numHabsSuite;
+            }
+
+            calcularPrecio(capacidad, servicios, categoria) {
+                let precio = super.calcularPrecio(capacidad, servicios);
+                let incremento = 0;
+
+                if (categoria > 1) {
+                    incremento = (precio * 0.05) * (categoria - 1);
+                }
+
+                return precio + incremento;
+            }
+
+            calcularRecaudacionHotel() {
+                return (this.numHabsEstandar * this.calcularPrecio(2, 2, this.categoria)) + (this.numHabsSuite * this.calcularPrecio(2, 5, this.categoria));
+            }
+
+        }
+
+        let habitacion = new Habitacion(1, 2, 2);
+
+        console.log(habitacion.calcularPrecio(2, 2));
+
+        let habitacionHotel = new HabitacionHotel(1, 2, 2, "Pepe", 2, 10, 5);
+
+        console.log(habitacionHotel.calcularPrecio(2, 2, 2));
+
+        console.log(habitacionHotel.calcularRecaudacionHotel());
+
+    </script>
+
+</body>
+</html>

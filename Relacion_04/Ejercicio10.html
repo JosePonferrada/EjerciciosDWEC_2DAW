@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 10 - Relación 04</title>
+</head>
+<body>
+
+    <script>
+
+        class Pelicula {
+
+            constructor(id, titulo, director, anioEstreno, paisesOrigen, genero, calificacion) {
+                this.id = this.validarId(id) ? id : "ID no válido";
+                this.titulo = this.validarTitulo(titulo) ? titulo : "Título no válido";
+                this.director = director;
+                this.anioEstreno = this.validarFecha(anioEstreno) ? anioEstreno : "Año de estreno no válido";
+                this.paisesOrigen = this.validarPaises(paisesOrigen) ? paisesOrigen : "Países de origen no válidos";
+                this.genero = this.validarGenero(genero) ? genero : "Género no válido";
+                this.calificacion = this.validarCalificacion(calificacion) ? calificacion : "Calificación no válida";
+            }
+
+            static getGenerosAceptados() {
+                return ["Action", "Adult", "Adventure", "Animation", "Biography", "Comedy", "Crime", "Documentary", "Drama", 
+                "Family", "Fantasy", "Film Noir", "Game-Show", "History", "Horror", "Musical", "Music", "Mystery", "News", 
+                "Reality-TV", "Romance", "Sci-Fi", "Short", "Sport", "Talk-Show", "Thriller", "War", "Western"];
+            }
+
+            getFichaTecnica() {
+                return `ID: ${this.id}\n
+                Título: ${this.titulo}\n
+                Director: ${this.director}\n
+                Año de estreno: ${this.anioEstreno}\n
+                Países de origen: ${this.paisesOrigen}\n
+                Género: ${this.genero}\n
+                Calificación: ${this.calificacion}`;
+            }
+
+            // Comprobaciones con patrones
+            
+            validarId(id) {
+                let patron = /^[A-Z]{2}[0-9]{7}$/;
+                return patron.test(id);
+            }
+
+            validarTitulo(titulo) {
+                return titulo.length <= 100;
+            }
+
+            validarFecha(fecha) {
+                let patron = /^[0-9]{4}$/;
+                return patron.test(fecha);
+            }
+
+            validarPaises(paises) {
+                return Array.isArray(paises);
+            }
+
+            validarGenero(genero) {
+                return Pelicula.getGenerosAceptados().includes(genero);
+            }
+
+            validarCalificacion(calificacion) {
+                return !isNaN(calificacion) && calificacion >= 0 && calificacion <= 10;
+            }
+
+        }
+
+        let peliculas = [
+            new Pelicula("AA1234567", "Título1", "Director1", 2020, ["España"], "Comedy", "8.5"),
+            new Pelicula("BB1234567", "Título2", "Director2", 2020, ["España"], "Comedy", "9"),
+            new Pelicula("CC1234567", "Título3", "Director3", 2020, ["España"], "Comedy", "5.75")
+        ];
+        
+        for (let i = 0; i < peliculas.length; i++) {
+            console.log(peliculas[i].getFichaTecnica());
+        }
+
+    </script>
+    
+</body>
+</html>
