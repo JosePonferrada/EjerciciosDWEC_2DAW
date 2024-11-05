@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta  charset="UTF-8" />
+<title>Ejercicio 3 - DOM</title>
+ 
+
+</head>
+ 
+<body>
+ 
+<ul id="diariosdeportivos">
+  <li>Marca</li>
+  <li>As</li>
+  <li>Mundo deportivo</li>
+  <li>Sport</li>
+  <li>L'equipe</li>
+</ul>
+
+<input type="button" value="Añadir elemento" onclick="addElement()">
+
+<script>
+
+    function addElement() {
+
+        var lista = document.getElementById("diariosdeportivos");
+
+        var texto = document.createTextNode(prompt("Introduce el nombre del diario deportivo"));
+
+        var elementoNuevo = document.createElement("li");
+//        var texto = document.createTextNode("Miguelito");
+
+        elementoNuevo.appendChild(texto);
+
+        lista.appendChild(elementoNuevo);
+
+
+        // ========== Segunda forma de hacerlo ==========
+
+//        elementoNuevo = document.createElement("li");
+//        var texto = document.createTextNode(prompt("Introduce el nombre del diario deportivo"));
+//        elementoNuevo.appendChild(texto);
+
+        // Podemos añadir un elemento creado 
+        elementoNuevo = "<li>Elemento añadido directamente</li>";
+
+        // Añadimos directamente al contenido innerHTML
+        lista.innerHTML += elementoNuevo;
+
+    }
+
+</script>
+ 
+</body>
+</html>

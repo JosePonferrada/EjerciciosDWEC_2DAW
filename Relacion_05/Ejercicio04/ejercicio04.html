@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 04 - Relación 05</title>
+</head>
+<body>
+
+    <h1>Rellene sus datos</h1>
+
+    <label for="nombre">Nombre:</label>
+    <input type="text" name="nombre" id="nombre" required>
+    <br>
+    <label for="apellidos">Apellidos:</label>
+    <input type="text" name="apellidos" id="apellidos" required>
+    <br>
+    <input type="submit" value="Enviar" id="enviar" onclick="show()">
+    <input type="reset" value="Limpiar" id="limpiar" onclick="clean()">
+    <br>
+
+    <script>
+
+        function show() {
+            let nombre = document.getElementById('nombre').value;
+            let apellidos = document.getElementById('apellidos').value;
+            let mensaje = document.createElement('p');
+            mensaje.innerHTML = `Bienvenido ${nombre} ${apellidos}`;
+            document.body.appendChild(mensaje);
+        }
+
+        function clean() {
+            document.getElementById('nombre').value = '';
+            document.getElementById('apellidos').value = '';
+            let mensaje = document.querySelector('p');
+            if (mensaje) {
+                mensaje.remove();
+            }
+        }
+
+    </script>
+
+</body>
+</html>

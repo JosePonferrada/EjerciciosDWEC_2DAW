@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 05 - Relación 05</title>
+</head>
+<body>
+    
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto modi facilis nesciunt consequuntur ipsam, a quae recusandae vero, soluta officiis, asperiores tenetur voluptatibus natus voluptatum. Aliquam tempore vel ipsa voluptate.</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto modi facilis nesciunt consequuntur ipsam, a quae recusandae vero, soluta officiis, asperiores tenetur voluptatibus natus voluptatum. Aliquam tempore vel ipsa voluptate.</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto modi facilis nesciunt consequuntur ipsam, a quae recusandae vero, soluta officiis, asperiores tenetur voluptatibus natus voluptatum. Aliquam tempore vel ipsa voluptate.</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto modi facilis nesciunt consequuntur ipsam, a quae recusandae vero, soluta officiis, asperiores tenetur voluptatibus natus voluptatum. Aliquam tempore vel ipsa voluptate.</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto modi facilis nesciunt consequuntur ipsam, a quae recusandae vero, soluta officiis, asperiores tenetur voluptatibus natus voluptatum. Aliquam tempore vel ipsa voluptate.</p>
+
+    <button onclick="changeAll()">Cambiar todos</button> 
+    <button onclick="changeFirst()">Cambiar primero</button>
+    <button onclick="changeEvens()">Cambiar pares</button>
+    <button onclick="changeOdds()">Cambiar impares</button>
+    <button onclick="addAfterSecond()">Añadir al final</button>
+    <button onclick="originalState()">Estado original</button>
+
+    <script>
+
+        function changeAll() {
+            let paragraphs = document.querySelectorAll('p');
+            paragraphs.forEach(paragraph => {
+                paragraph.style.color = 'red';
+            });
+        }
+
+        function changeFirst() {
+            let paragraphs = document.querySelectorAll('p');
+            paragraphs[0].style.color = 'red';
+        }
+
+        function changeEvens() {
+            let paragraphs = document.querySelectorAll('p');
+            paragraphs.forEach((paragraph, index) => {
+                if (index % 2 === 0) {
+                    paragraph.style.color = 'red';
+                }
+            });
+        }
+
+        function changeOdds() {
+            let paragraphs = document.querySelectorAll('p');
+            paragraphs.forEach((paragraph, index) => {
+                if (index % 2 !== 0) {
+                    paragraph.style.color = 'red';
+                }
+            });
+        }
+
+        function addAfterSecond() {
+            let newParagraph = document.createElement('p');
+            newParagraph.innerHTML = 'Nuevo párrafo';
+            let secondParagraph = document.querySelectorAll('p')[1];
+            secondParagraph.insertAdjacentElement('afterend', newParagraph);
+        }
+
+        function originalState() {
+            let paragraphs = document.querySelectorAll('p');
+            paragraphs.forEach(paragraph => {
+                paragraph.style.color = 'black';
+            });
+        }
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 07 - Relación 05</title>
+</head>
+<body>
+    
+    <!--
+    Crear un documento javascript que genere una lista de 10 elementos y un botón “Ordenar”, de forma que al
+pulsarlo aparezcan los elementos de la lista ordenados alfabéticamente.
+
+    -->
+
+    <ul id="list">
+        <li>Alhambra</li>
+        <li>Boca</li>
+        <li>Cuello</li>
+        <li>Dedo</li>
+        <li>Álvaro</li>
+        <li>Adoquín</li>
+        <li>Bueno</li>
+        <li>Abrir</li>
+        <li>Rojo</li>
+        <li>Azul</li>
+    </ul>
+
+    <button onclick="sortList()">Ordenar</button>
+
+    <script>
+
+        function sortList() {
+            let list = document.getElementById('list');
+            let listItems = list.getElementsByTagName('li');
+            let arrayItems = Array.from(listItems);
+
+            arrayItems.sort((a, b) => {
+                return a.innerHTML.localeCompare(b.innerHTML);
+            });
+
+            arrayItems.forEach(item => {
+                list.appendChild(item);
+            });
+        }
+
+    </script>
+
+</body>
+</html>

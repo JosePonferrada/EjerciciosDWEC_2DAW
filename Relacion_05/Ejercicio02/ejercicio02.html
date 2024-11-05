@@ -1,0 +1,63 @@
+<!DOCTYPE html">
+<html>
+<head>
+<meta  charset="UTF-8" />
+<title>Ejercicio 2 - DOM básico</title>
+ 
+<style type="text/css">
+.oculto { display: none; }
+.visible { display: inline; }
+</style>
+ 
+<script type="text/javascript">
+  /*
+function mostrartexto() {
+  var elemento = document.getElementById("leermas");
+  var enlace = document.getElementById("enlace");
+  
+  if (elemento.classList.contains("visible")) {
+    elemento.className = "oculto";
+    enlace.innerHTML = "Leer más";
+    return; 
+  } else { 
+    elemento.className = "visible";
+    enlace.innerHTML = "Leer menos";
+  }
+}
+  */
+
+// Para hacer lo mismo pero con el método toggle
+function mostrartexto() {
+  var elemento = document.getElementById("leermas");
+  var enlace = document.getElementById("enlace");
+  
+  elemento.classList.toggle("visible");
+  elemento.classList.toggle("oculto");
+  
+  if (elemento.classList.contains("visible")) {
+    enlace.innerHTML = "Leer menos";
+  } else {
+    enlace.innerHTML = "Leer más";
+  }
+}
+
+</script>
+</head>
+ 
+<body>
+ 
+<p id="texto">No hay duda. Dos de los mejores equipos de mundo lo son porque bajo palos tienen a 
+guardametas dominantes. Thibaut Courtois y Jan Oblak dejaron el derbi como empezó con unas manos 
+extraordinarias, decisivas, tanto como los goles que negaron a Griezmann, Costa y Asensio. 
+No fue un mal derbi. El Atlético volvió a salir del Bernabéu sin daño, amparado en su fortaleza 
+defensiva, y el Madrid recuperó la autoestima perdida en el Pizjuán. De menos a más, pero sin 
+remate. <span id="leermas" class="oculto">De un tiempo a esta parte, los derbis del Bernabéu se 
+juegan según marca el Atlético. El manejo del ritmo, de los tiempos y de los espacios rara vez 
+escapa del poder rojiblanco hasta disputar el partido que a ellos les interesa. Duelo cerrado, 
+a pocas oportunidades, en que cada pelota es un Vietnam. Sí, es el mejor derbi del mundo, el que 
+reúne al campeón de la Champions con el de la Europa League y la Supercopa. La igualdad es tal que 
+los detalles son esenciales.</span></p><a id="enlace" href="#" onclick="mostrartexto(); return false;">
+Leer Más</a>
+ 
+</body>
+</html>

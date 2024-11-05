@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 06 - Relación 05</title>
+</head>
+<body>
+    
+    <button onclick="invert()">Invertir</button>
+    <button onclick="create5paragraphs()">Crear 5 párrafos</button>
+
+    <script>
+
+        function invert() {
+            let paragraphs = document.querySelectorAll('p');
+            let arrayParagraphs = Array.from(paragraphs);
+
+            arrayParagraphs.reverse();
+
+            arrayParagraphs.forEach(paragraph => {
+                document.body.appendChild(paragraph);
+            });
+        }
+
+        function create5paragraphs() {
+
+            // Delete all paragraphs
+            document.querySelectorAll('p').forEach(paragraph => {
+                paragraph.remove();
+            });
+
+            // Create 5 new paragraphs
+            for (let i = 0; i < 5; i++) {
+                let newParagraph = document.createElement('p');
+                newParagraph.innerHTML = 'Párrafo ' + (i + 1);
+                document.body.appendChild(newParagraph);
+
+            }
+        }
+
+    </script>
+
+</body>
+</html>
