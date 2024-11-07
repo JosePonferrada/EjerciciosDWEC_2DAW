@@ -1,0 +1,43 @@
+body,
+html {
+    height: 100%;
+    margin: 0;
+}
+
+.fondo,
+.cuadroexterno,
+.cuadromedio,
+.cuadrointerno {
+    align-items: center;
+    /*la caja flexible o FlexBox con display: flex. Funciona ajustando los tamaños y la disposición de los elementos que se
+    encuentran dentro de un contenedor o caja, de tal manera que se adapten siempre al espacio disponible.*/
+    display: flex;
+    /*La propiedad justify-content define cómo el navegador distribuye el espacio entre y alrededor de los items de la caja
+    flex*/
+    justify-content: center;
+}
+
+.fondo {
+    background-color: rgb(72, 182, 233);
+    height: 100%;
+    position: relative;
+    width: 100%;
+}
+
+.cuadroexterno {
+    background-color: blue;
+    width: 600px;
+    height: 600px;
+}
+
+.cuadromedio {
+    background-color: green;
+    width: 300px;
+    height: 300px;
+}
+
+.cuadrointerno {
+    background-color: red;
+    width: 150px;
+    height: 150px;
+}

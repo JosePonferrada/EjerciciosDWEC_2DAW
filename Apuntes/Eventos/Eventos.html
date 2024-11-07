@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prueba de Eventos</title>
+</head>
+<body>
+    
+    <!-- Eventos como atributos HTML -->
+
+    <input type="button" value="Enviar" onclick="alert('Hola Mundo')"/>
+
+    <!-- Manejadores con funciones externas -->
+
+    <script>
+        function Mostrar() {
+            alert('Hola Mundo con funciones externas');
+        }
+    </script>
+
+    <input type="button" value="Enviar" onclick="Mostrar()"/>
+
+    <!-- Manejadores con elementos semánticos -->
+
+    <input type="button" value="Enviar" id="boton"/>
+
+    <script>
+        function MostrarConElementosSem() {
+            alert('Hola Mundo con elementos semánticos');
+        }
+
+        document.getElementById('boton').onclick = MostrarConElementosSem;
+    </script>
+
+    <!-- Limitaciones de los manejadores de eventos semánticos -->
+
+    <!-- En primer lugar, solo podemos asignar una función a un evento manejado como evento
+    semántico. Es decir, si le asignamos dos funciones, se queda con la última (es como si la
+    sobreescribiera).
+    Ej: --> 
+    
+    <input type="button" id="Enviar" value="Enviar"/>
+    
+    <script>
+    // Función externa
+    function mostrar1() { alert('Hola Mundo1'); }
+    function mostrar2() { alert('Hola Mundo2'); }
+    document.getElementById("Enviar").onclick = mostrar1;
+    document.getElementById("Enviar").onclick = mostrar2;
+    // En este ejemplo, no tendría sentido mostrar1, ya que habría sido reemplazada por mostrar2
+    
+    // • En segundo lugar, no se pueden pasar parámetros a la función manejadora de eventos
+    // semánticos, o mejor dicho, solo se puede pasar el parámetro predefinido event.
+    // Ejs: 
+    
+    document.getElementById("Enviar").onclick=function(){alert("Hola mundo1");}
+    document.getElementById("Enviar").onclick=function(e){
+        console.log("Hola mundo2");
+        console.log(e); // e es lo mismo que event
+        console.log(event);
+    }
+    </script>
+
+    <!-- Método addEventListener() -->
+
+    <!-- El método addEventListener() permite añadir varios manejadores de eventos a un mismo
+    elemento, sin que se sobrescriban entre sí. Este método recibe tres parámetros: el nombre del
+    evento, la función manejadora y un booleano que indica si el evento se ejecuta en la fase de
+    captura o de burbujeo. True indica que se ejecuta en la fase de captura (de padre a hijo) y false en la fase de
+    burbujeo. -->
+
+    <input type="button" id="Enviar3" value="Enviar"/>
+
+    <script>
+        document.getElementById("Enviar3").addEventListener("click",function(){
+        alert("Hola mundo1")});
+        document.getElementById("Enviar3").addEventListener("click",function(e){
+        alert("Hola mundo2");
+        console.log(e); // e es event
+        console.log(event);
+        });
+    </script>    
+
+    <!-- Bubbling de eventos (burbujeo) -->    
+
+    <!-- El bubbling de eventos es un mecanismo que permite propagar un evento desde el elemento
+    que lo originó hasta el elemento raíz del documento. Este mecanismo se activa por defecto en
+    todos los navegadores, pero se puede desactivar con el método stopPropagation(). -->
+
+    <div id="primerDiv">
+        <div id="segundoDiv">
+            <input type="button" id="Enviar4" value="Enviar"/>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById("primerDiv").addEventListener("click",function(){
+            alert("Hola mundo1")});
+        document.getElementById("segundoDiv").addEventListener("click",function(){
+            alert("Hola mundo2")});
+        document.getElementById("Enviar4").addEventListener("click",function(){
+            alert("Hola mundo3")});
+
+        // Para que se propague el evento de padre a hijo, se debe de poner el tercer parámetro
+        // como true. En caso contrario, se propagará de hijo a padre.
+
+        // Tambien podemos crear un objeto como tercer parámetro, que nos permitirá modificar
+        // el comportamiento del evento. Por ejemplo, si queremos que el evento se ejecute una
+        // sola vez, podemos poner {capture:true, once:true} como tercer parámetro.
+        // Eso establecerá el modo de captura y que el evento se ejecute una sola vez.
+
+        // En este caso se ejecutarán las tres alertas, mostrando en primer lugar
+        // "Hola mundo3", después "Hola mundo2" y por último "Hola mundo1".
+
+    </script>
+
+    <!-- Método removeEventListener() -->
+
+    <!-- El método removeEventListener() permite eliminar un manejador de eventos previamente
+    añadido con addEventListener(). Este método recibe los mismos parámetros que
+    addEventListener(). -->
+
+    <input type="button" id="Enviar5" value="Enviar"/>
+
+    <script>
+        
+        const quitandoClick = (e)=>{
+        alert("quitando el evento Click");
+        console.log(e.type,e.target);
+        document.getElementById("Enviar5").removeEventListener("click",quitandoClick);
+        }
+        document.getElementById("Enviar5").addEventListener("click",quitandoClick);
+        
+    </script>
+
+</body>
+</html>
