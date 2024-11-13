@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 08 - Relación 05</title>
+</head>
+<body>
+    
+    <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. <a href="http://www.marca.es">Enlace a Marca</a> Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. <a href="http://www.marca.es">Enlace a Marca</a> Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+    </p>
+
+    <button onclick="changeLink()">Cambiar periódico</button>
+
+    <script>
+        function changeLink() {
+            let links = document.querySelectorAll('a');
+            links.forEach(link => {
+                // Changing the link
+                link.href = 'http://www.as.com';
+
+                // Changing the link text
+                link.innerHTML = 'Enlace a As';
+            });
+        }
+    </script>
+
+</body>
+</html>

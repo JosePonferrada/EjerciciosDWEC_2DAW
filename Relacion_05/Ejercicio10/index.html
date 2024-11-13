@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 10 - Relación 05</title>
+</head>
+<body>
+    
+    <ul id="lista">
+        <li>Elemento 1</li>
+        <li>Elemento 2</li>
+        <li>Elemento 3</li>
+        <li>Elemento 4</li>
+        <li>Elemento 5</li>
+    </ul>
+
+    <input type="text" id="contenido" placeholder="Contenido">
+    <input type="text" id="posicion" placeholder="Posición">
+    <button id="insertar">Insertar</button>
+
+    <script>
+        var insertar = document.getElementById("insertar");
+        insertar.addEventListener("click", function() {
+            var contenido = document.getElementById("contenido").value;
+            var posicion = document.getElementById("posicion").value;
+
+            var lista = document.getElementById("lista");
+            var elementos = lista.querySelectorAll("li");
+
+            var nuevoElemento = document.createElement("li");
+            var texto = document.createTextNode(contenido);
+            nuevoElemento.appendChild(texto);
+
+            if (posicion >= 1 && posicion <= elementos.length) {
+                lista.insertBefore(nuevoElemento, elementos[posicion - 1]);
+            } else {
+                lista.appendChild(nuevoElemento);
+            }
+        });
+    </script>
+
+</body>
+</html>
