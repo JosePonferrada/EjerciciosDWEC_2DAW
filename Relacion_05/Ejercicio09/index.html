@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 09 - Relación 05</title>
+</head>
+<body>
+
+    <p>Primer párrafo</p>
+    <p>Segundo párrafo</p>
+
+    <script>
+        // Creación de un nuevo nodo
+        var nuevoParrafo = document.createElement("p");
+        var texto = document.createTextNode("Este párrafo ha sido añadido con JavaScript");
+        nuevoParrafo.appendChild(texto);
+
+        // Añadir el nuevo nodo al final del documento
+        document.body.appendChild(nuevoParrafo);
+
+        // Modificación de un nodo
+        var parrafos = document.getElementsByTagName("p");
+        parrafos[0].style.color = "red";
+
+        // Eliminación de un nodo
+        document.body.removeChild(parrafos[1]);
+    </script>
+
+</body>
+</html>
