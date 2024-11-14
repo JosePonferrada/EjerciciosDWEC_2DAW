@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prueba de Forms</title>
+</head>
+<body>
+    
+    <form id="formulario">
+        <label>Formulario 1</label><br>
+        Nombre: <input type="text" placeholder="Introduzca su nombre">
+        <br><br>
+    </form>
+
+    <form id="formulario2">
+        <label>Formulario 2</label><br>
+        Nombre: <input type="text" placeholder="Introduzca su nombre">
+        <br><br>
+    </form>
+
+    <script>
+
+        console.log(document.forms); // Nos devuelve un array con los formularios
+
+        console.log(document.forms[1].elements[0]); // Nos devuelve el input del segundo formulario
+        // El label no lo cuenta como elemento
+
+    </script>
+
+</body>
+</html>
