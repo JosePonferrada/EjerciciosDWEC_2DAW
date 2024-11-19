@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prueba de Callback</title>
+</head>
+
+<body>
+    <script>
+
+        function antes() {
+            // Simular retardo
+            setTimeout(function () { console.log("antes"); }, 1000);
+        }
+        function despues() { console.log("después"); }
+        antes();
+        despues();
+
+        // Imprimirá "después" y luego "antes" por el retardo de 1 segundo
+
+    </script>
+
+    <!-- Ejemplo de suma de 2 números usando callback -->
+
+    Número 1: <input type="text" id="num1" /><br>
+    Número 2:<input type="text" id="num2" /><br>
+    <button id="sumar"> Sumar</button>
+
+    <script>
+
+        function Sumar(num1, num2, funcionCallback) {
+            return funcionCallback(num1 + num2);
+        }
+        document.querySelector("#sumar").addEventListener('click', function () {
+            var num1 = parseInt(document.querySelector("#num1").value),
+                num2 = parseInt(document.querySelector("#num2").value);
+            Sumar(num1, num2, function (r) { console.log('El resultado es ' + r); });// sin arrow function
+            Sumar(num1, num2, r => { console.log('El resultado es ' + r); }); // con arrow function
+        })
+        
+    </script>
+
+</body>
+
+</html>

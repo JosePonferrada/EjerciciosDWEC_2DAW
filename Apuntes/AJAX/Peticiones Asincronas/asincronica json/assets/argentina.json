@@ -1,0 +1,35 @@
+[
+    {"provincias":
+        [
+        {"nombre_completo":"Provincia de Misiones",
+        "fuente":"IGN","iso_id":"AR-N",
+        "nombre":"Misiones","id":"54",
+        "categoria":"Provincia",
+        "iso_nombre":"Misiones",
+        "centroide":{"lat":-26.8753965086829,"lon":-54.6516966230371}
+        },
+        {"nombre_completo":"Provincia de San Luis",
+        "fuente":"IGN",
+        "iso_id":"AR-D",
+        "nombre":"San Luis",
+        "id":"74",
+        "categoria":"Provincia",
+        "iso_nombre":"San Luis",
+        "centroide":{"lat":-33.7577257449137,"lon":-66.0281298195836}},
+        {"nombre_completo":"Provincia de San Juan",
+        "fuente":"IGN","iso_id":"AR-J",
+        "nombre":"San Juan","id":"70",
+        "categoria":"Provincia",
+        "iso_nombre":"San Juan",
+        "centroide":{"lat":-30.8653679979618,"lon":-68.8894908486844}},
+        {"nombre_completo":"Provincia de Entre Ríos",
+        "fuente":"IGN",
+        "iso_id":"AR-E",
+        "nombre":"Entre Ríos",
+        "id":"30",
+        "categoria":"Provincia",
+        "iso_nombre":"Entre Ríos",
+        "centroide":{"lat":-32.0588735436448,"lon":-59.2014475514635}}
+    ]
+    }
+]

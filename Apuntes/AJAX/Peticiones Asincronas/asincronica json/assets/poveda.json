@@ -1,0 +1,429 @@
+[
+    {
+    "SECCION": "14",
+    "EDAD": "00 - 05",
+    "HOMBRE": 34,
+    "MUJER": 26,
+    "TOTAL": 60
+    },
+    {
+    "SECCION": "14",
+    "EDAD": "06 - 10",
+    "HOMBRE": 35,
+    "MUJER": 32,
+    "TOTAL": 67
+    },
+    {
+    "SECCION": "14",
+    "EDAD": "11 - 15",
+    "HOMBRE": 33,
+    "MUJER": 31,
+    "TOTAL": 64
+    },
+    {
+    "SECCION": "14",
+    "EDAD": "16 - 20",
+    "HOMBRE": 36,
+    "MUJER": 26,
+    "TOTAL": 62
+    },
+    {
+    "SECCION": "14",
+    "EDAD": "21 - 25",
+    "HOMBRE": 58,
+    "MUJER": 31,
+    "TOTAL": 89
+    },
+    {
+    "SECCION": "14",
+    "EDAD": "26 - 30",
+    "HOMBRE": 43,
+    "MUJER": 43,
+    "TOTAL": 86
+    },
+    {
+    "SECCION": "14",
+    "EDAD": "31 - 35",
+    "HOMBRE": 52,
+    "MUJER": 49,
+    "TOTAL": 101
+    },
+    {
+    "SECCION": "14",
+    "EDAD": "36 - 40",
+    "HOMBRE": 46,
+    "MUJER": 40,
+    "TOTAL": 86
+    },
+    {
+    "SECCION": "14",
+    "EDAD": "41 - 45",
+    "HOMBRE": 49,
+    "MUJER": 40,
+    "TOTAL": 89
+    },
+    {
+    "SECCION": "14",
+    "EDAD": "46 - 50",
+    "HOMBRE": 65,
+    "MUJER": 62,
+    "TOTAL": 127
+    },
+    {
+    "SECCION": "14",
+    "EDAD": "51 - 55",
+    "HOMBRE": 43,
+    "MUJER": 60,
+    "TOTAL": 103
+    },
+    {
+    "SECCION": "14",
+    "EDAD": "56 - 60",
+    "HOMBRE": 77,
+    "MUJER": 81,
+    "TOTAL": 158
+    },
+    {
+    "SECCION": "14",
+    "EDAD": "61 - 65",
+    "HOMBRE": 64,
+    "MUJER": 53,
+    "TOTAL": 117
+    },
+    {
+    "SECCION": "14",
+    "EDAD": "66 - 70",
+    "HOMBRE": 49,
+    "MUJER": 45,
+    "TOTAL": 94
+    },
+    {
+    "SECCION": "14",
+    "EDAD": "71 - 75",
+    "HOMBRE": 30,
+    "MUJER": 38,
+    "TOTAL": 68
+    },
+    {
+    "SECCION": "14",
+    "EDAD": "76 - 80",
+    "HOMBRE": 13,
+    "MUJER": 14,
+    "TOTAL": 27
+    },
+    {
+    "SECCION": "14",
+    "EDAD": "81 - 90",
+    "HOMBRE": 15,
+    "MUJER": 23,
+    "TOTAL": 38
+    },
+    {
+    "SECCION": "14",
+    "EDAD": "91 - 95",
+    "HOMBRE": 2,
+    "MUJER": 2,
+    "TOTAL": 4
+    },
+    {
+    "SECCION": "14",
+    "EDAD": "> 95",
+    "HOMBRE": 1,
+    "MUJER": 1,
+    "TOTAL": 2
+    },
+    {
+    "SECCION": "Total  Sección 14",
+    "EDAD": "",
+    "HOMBRE": 745,
+    "MUJER": 697,
+    "TOTAL": 1442
+    },
+    {
+    "SECCION": "15",
+    "EDAD": "00 - 05",
+    "HOMBRE": 57,
+    "MUJER": 41,
+    "TOTAL": 98
+    },
+    {
+    "SECCION": "15",
+    "EDAD": "06 - 10",
+    "HOMBRE": 39,
+    "MUJER": 41,
+    "TOTAL": 80
+    },
+    {
+    "SECCION": "15",
+    "EDAD": "11 - 15",
+    "HOMBRE": 39,
+    "MUJER": 42,
+    "TOTAL": 81
+    },
+    {
+    "SECCION": "15",
+    "EDAD": "16 - 20",
+    "HOMBRE": 39,
+    "MUJER": 41,
+    "TOTAL": 80
+    },
+    {
+    "SECCION": "15",
+    "EDAD": "21 - 25",
+    "HOMBRE": 53,
+    "MUJER": 45,
+    "TOTAL": 98
+    },
+    {
+    "SECCION": "15",
+    "EDAD": "26 - 30",
+    "HOMBRE": 64,
+    "MUJER": 65,
+    "TOTAL": 129
+    },
+    {
+    "SECCION": "15",
+    "EDAD": "31 - 35",
+    "HOMBRE": 68,
+    "MUJER": 74,
+    "TOTAL": 142
+    },
+    {
+    "SECCION": "15",
+    "EDAD": "36 - 40",
+    "HOMBRE": 80,
+    "MUJER": 68,
+    "TOTAL": 148
+    },
+    {
+    "SECCION": "15",
+    "EDAD": "41 - 45",
+    "HOMBRE": 68,
+    "MUJER": 59,
+    "TOTAL": 127
+    },
+    {
+    "SECCION": "15",
+    "EDAD": "46 - 50",
+    "HOMBRE": 65,
+    "MUJER": 59,
+    "TOTAL": 124
+    },
+    {
+    "SECCION": "15",
+    "EDAD": "51 - 55",
+    "HOMBRE": 55,
+    "MUJER": 63,
+    "TOTAL": 118
+    },
+    {
+    "SECCION": "15",
+    "EDAD": "56 - 60",
+    "HOMBRE": 60,
+    "MUJER": 105,
+    "TOTAL": 165
+    },
+    {
+    "SECCION": "15",
+    "EDAD": "61 - 65",
+    "HOMBRE": 97,
+    "MUJER": 84,
+    "TOTAL": 181
+    },
+    {
+    "SECCION": "15",
+    "EDAD": "66 - 70",
+    "HOMBRE": 50,
+    "MUJER": 46,
+    "TOTAL": 96
+    },
+    {
+    "SECCION": "15",
+    "EDAD": "71 - 75",
+    "HOMBRE": 27,
+    "MUJER": 25,
+    "TOTAL": 52
+    },
+    {
+    "SECCION": "15",
+    "EDAD": "76 - 80",
+    "HOMBRE": 10,
+    "MUJER": 15,
+    "TOTAL": 25
+    },
+    {
+    "SECCION": "15",
+    "EDAD": "81 - 90",
+    "HOMBRE": 16,
+    "MUJER": 27,
+    "TOTAL": 43
+    },
+    {
+    "SECCION": "15",
+    "EDAD": "91 - 95",
+    "HOMBRE": 1,
+    "MUJER": 3,
+    "TOTAL": 4
+    },
+    {
+    "SECCION": "15",
+    "EDAD": "> 95",
+    "HOMBRE": null,
+    "MUJER": 4,
+    "TOTAL": 4
+    },
+    {
+    "SECCION": "Total Sección 15",
+    "EDAD": "",
+    "HOMBRE": 888,
+    "MUJER": 907,
+    "TOTAL": 1795
+    },
+    {
+    "SECCION": "19",
+    "EDAD": "00 - 05",
+    "HOMBRE": 47,
+    "MUJER": 49,
+    "TOTAL": 96
+    },
+    {
+    "SECCION": "19",
+    "EDAD": "06 - 10",
+    "HOMBRE": 51,
+    "MUJER": 39,
+    "TOTAL": 90
+    },
+    {
+    "SECCION": "19",
+    "EDAD": "11 - 15",
+    "HOMBRE": 63,
+    "MUJER": 52,
+    "TOTAL": 115
+    },
+    {
+    "SECCION": "19",
+    "EDAD": "16 - 20",
+    "HOMBRE": 54,
+    "MUJER": 43,
+    "TOTAL": 97
+    },
+    {
+    "SECCION": "19",
+    "EDAD": "21 - 25",
+    "HOMBRE": 67,
+    "MUJER": 66,
+    "TOTAL": 133
+    },
+    {
+    "SECCION": "19",
+    "EDAD": "26 - 30",
+    "HOMBRE": 58,
+    "MUJER": 55,
+    "TOTAL": 113
+    },
+    {
+    "SECCION": "19",
+    "EDAD": "31 - 35",
+    "HOMBRE": 61,
+    "MUJER": 69,
+    "TOTAL": 130
+    },
+    {
+    "SECCION": "19",
+    "EDAD": "36 - 40",
+    "HOMBRE": 64,
+    "MUJER": 69,
+    "TOTAL": 133
+    },
+    {
+    "SECCION": "19",
+    "EDAD": "41 - 45",
+    "HOMBRE": 76,
+    "MUJER": 71,
+    "TOTAL": 147
+    },
+    {
+    "SECCION": "19",
+    "EDAD": "46 - 50",
+    "HOMBRE": 72,
+    "MUJER": 67,
+    "TOTAL": 139
+    },
+    {
+    "SECCION": "19",
+    "EDAD": "51 - 55",
+    "HOMBRE": 98,
+    "MUJER": 83,
+    "TOTAL": 181
+    },
+    {
+    "SECCION": "19",
+    "EDAD": "56 - 60",
+    "HOMBRE": 74,
+    "MUJER": 90,
+    "TOTAL": 164
+    },
+    {
+    "SECCION": "19",
+    "EDAD": "61 - 65",
+    "HOMBRE": 74,
+    "MUJER": 57,
+    "TOTAL": 131
+    },
+    {
+    "SECCION": "19",
+    "EDAD": "66 - 70",
+    "HOMBRE": 48,
+    "MUJER": 47,
+    "TOTAL": 95
+    },
+    {
+    "SECCION": "19",
+    "EDAD": "71 - 75",
+    "HOMBRE": 27,
+    "MUJER": 28,
+    "TOTAL": 55
+    },
+    {
+    "SECCION": "19",
+    "EDAD": "76 - 80",
+    "HOMBRE": 22,
+    "MUJER": 18,
+    "TOTAL": 40
+    },
+    {
+    "SECCION": "19",
+    "EDAD": "81 - 90",
+    "HOMBRE": 12,
+    "MUJER": 19,
+    "TOTAL": 31
+    },
+    {
+    "SECCION": "19",
+    "EDAD": "91 - 95",
+    "HOMBRE": 1,
+    "MUJER": 9,
+    "TOTAL": 10
+    },
+    {
+    "SECCION": "19",
+    "EDAD": "> 95",
+    "HOMBRE": null,
+    "MUJER": 2,
+    "TOTAL": 2
+    },
+    {
+    "SECCION": "Total Sección 19",
+    "EDAD": "",
+    "HOMBRE": 969,
+    "MUJER": 933,
+    "TOTAL": 1902
+    },
+    {
+    "SECCION": "Total General",
+    "EDAD": "",
+    "HOMBRE": 2602,
+    "MUJER": 2537,
+    "TOTAL": 5139
+    }
+    ]

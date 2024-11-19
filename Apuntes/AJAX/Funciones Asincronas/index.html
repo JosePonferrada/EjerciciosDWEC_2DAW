@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prueba de Funciones Asíncronas</title>
+</head>
+
+<body>
+
+    <script>
+
+        // To use async/await, you need to use the async keyword before the function declaration.
+        // The await keyword is used to wait for a Promise. It can only be used inside an async function.
+        // The async and await keywords enable asynchronous, promise-based behavior to be written in a cleaner style, 
+        // avoiding the need to explicitly configure promise chains.
+
+        function promesaCuadrado(valor) {
+            return new Promise((resolve, reject) => {
+                setTimeout(() => { resolve({ valor: valor, resultado: valor * valor }) }, 1000)
+            })
+        }
+
+        async function funcionAsincrona() {
+            try {
+                console.log("inicio función asíncrona");
+                let obj = promesaCuadrado(0);
+                console.log(`promesa_fasincrona:${obj.valor},${obj.resultado}`);
+                obj = await promesaCuadrado(1);
+                console.log(`promesa_fasincrona:${obj.valor},${obj.resultado}`);
+                obj = await promesaCuadrado(2);
+                console.log(`promesa_fasincrona:${obj.valor},${obj.resultado}`);
+                obj = await promesaCuadrado(3);
+                console.log(`promesa_fasincrona:${obj.valor},${obj.resultado}`);
+                obj = await promesaCuadrado(4);
+                console.log(`promesa_fasincrona:${obj.valor},${obj.resultado}`);
+                obj = await promesaCuadrado(5);
+                console.log(`promesa_fasincrona:${obj.valor},${obj.resultado}`);
+                console.log("fin función asíncrona");
+            }
+            catch (error) { console.log(error); }
+        }
+
+        funcionAsincrona();
+ 
+    </script>
+
+</body>
+
+</html>

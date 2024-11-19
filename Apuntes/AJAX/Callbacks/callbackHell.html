@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prueba de Callback Hell</title>
+</head>
+
+<body>
+
+    <script>
+
+        // Callback Hell is a term used to describe a situation when callbacks are nested within other
+        // callbacks several levels deep, making the code difficult to read and understand.
+
+        function cuadradoCallback(valor, functionCallback) {
+            setTimeout(() => {
+                functionCallback(valor, valor * valor)
+            }, Math.random() * 1000);
+        }
+        cuadradoCallback(0, (valor, resultado) => {
+            console.log("Inicio de callback");
+            console.log(`Callback: ${valor},${resultado}`);
+            cuadradoCallback(1, (valor, resultado) => {
+                console.log(`Callback: ${valor},${resultado}`);
+                cuadradoCallback(2, (valor, resultado) => {
+                    console.log(`Callback: ${valor},${resultado}`);
+                    cuadradoCallback(3, (valor, resultado) => {
+                        console.log(`Callback: ${valor},${resultado}`);
+                        cuadradoCallback(4, (valor, resultado) => {
+                            console.log(`Callback: ${valor},${resultado}`);
+                            cuadradoCallback(5, (valor, resultado) => {
+                                console.log(`Callback: ${valor},${resultado}`);
+                                console.log("Fin de callback");
+                            })
+                        })
+                    })
+                })
+            })
+        })
+
+    </script>
+
+</body>
+
+</html>
