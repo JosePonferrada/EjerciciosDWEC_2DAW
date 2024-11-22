@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRUD API REST FETCH</title>
+</head>
+
+<body>
+    <h1>CRUD API REST FETCH</h1>
+    <section class="crud">
+        <div>
+            <h2 class="crud-titulo">Agregar Módulo de primero</h2>
+            <form class="crud-form">
+                <input type="text" name="modulo" placeholder="Módulo" required>
+                <br>
+                <input type="text" name="profesor" placeholder="Profesor" required>
+                <br>
+                <input type="submit" value="Enviar">
+                <input type="hidden" name="id">
+            </form>
+        </div>
+        <div>
+            <h2>Ver Módulos de primero</h2>
+            <table class="crud-table">
+                <thead>
+                    <tr>
+                        <th>Módulo</th>
+                        <th>Profesor</th>
+                        <th>Operaciones</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+    </section>
+    <template id="crud-template">
+        <tr>
+            <td class="modulo"></td>
+            <td class="profesor"></td>
+            <td>
+                <button class="edit">Editar</button>
+                <button class="delete">Eliminar</button>
+            </td>
+        </tr>
+    </template>
+    <script src="js/crud_fetch_apirest.js">
+    </script>
+</body>
+
+</html>
