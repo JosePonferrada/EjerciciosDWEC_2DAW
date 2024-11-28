@@ -1,0 +1,49 @@
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Ejercicio 01 - Eventos</title>
+</head>
+
+<body>
+    
+    <h1>
+        <center>Ejercicio 01 - Eventos</center>
+    </h1>
+    <p>Fuentes del operativo de emergencias han confirmado que han encontrado vivos a tres de los
+        cinco desaparecidos, que se habían refugiado en la antigua estación de tren. Hasta 220 litros de
+        agua por metro cuadrado se registraron en la zona de Sant Llorenç, según el Govern balear.</p>
+    <p>Fuentes del operativo de emergencias han confirmado que han encontrado vivos a tres de los
+        cinco desaparecidos, que se habían refugiado en la antigua estación de tren. Hasta 220 litros de
+        agua por metro cuadrado se registraron en la zona de Sant Llorenç, según el Govern balear.</p>
+    <p>Fuentes del operativo de emergencias han confirmado que han encontrado vivos a tres de los
+        cinco desaparecidos, que se habían refugiado en la antigua estación de tren. Hasta 220 litros de
+        agua por metro cuadrado se registraron en la zona de Sant Llorenç, según el Govern balear.</p>
+
+    
+    <script>
+
+        var parrafos = document.querySelectorAll("p");
+
+        document.addEventListener("click", function (e) {
+            if (e.target === parrafos[0]) {
+                parrafos[0].style.color = "red";
+                parrafos[1].style.color = "black";
+                parrafos[2].style.color = "black";
+            } else if (e.target === parrafos[1]) {
+                parrafos[0].style.color = "black";
+                parrafos[1].style.color = "blue";
+                parrafos[2].style.color = "black";
+            } else if (e.target === parrafos[2]) {
+                parrafos[0].style.color = "black";
+                parrafos[1].style.color = "black";
+                parrafos[2].style.color = "green";
+            }
+        });
+
+    </script>
+
+
+</body>
+
+</html>

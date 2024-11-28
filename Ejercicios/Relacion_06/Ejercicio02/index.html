@@ -1,0 +1,105 @@
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Ejercicio 02 - Eventos</title>
+</head>
+
+<body>
+
+    <!-- Crear el archivo ejercicio1.js necesario para que cuando se haga clic sobre el
+enlace “Ocultar contenido párrafo X” este debe ocultarse y al mismo tiempo
+mostrar el enlace “Mostrar contenido párrafo X” para que si de nuevo hacemos
+clic en él, dicho párrafo se haga de nuevo visible y además el enlace ponga el texto
+original “Ocultar contenido párrafo X”.
+Además, cada párrafo debe mostrar tres botones, el botón “Aumentar”, el botón
+“Disminuir” y el botón “Defecto” para que al pulsar sobre dichos botones, aumente,
+disminuya o vuelva su tamaño de letra por defecto del párrafo correspondiente. -->
+
+    <h1>
+        <center>Ejercicio 02 - Eventos </center>
+    </h1>
+    <p id="parrafo1" style="font-size:1em;">Joaquín Sánchez pasó por los micrófonos del Transistor de Onda Cero.
+        El capitán del Betis contó las razones por las que se frustó su fichaje por el Real Madrid.
+        "Estuve a nada de firmar el contrato con el Real Madrid y pasar la revisión médica.
+        Fue un poco extraño. En aquella época Lopera sabía cuáles eran mis intenciones desde el primer día.
+        Poder jugar en un equipo como el Real Madrid. Siempre se lo transmití porque era una oportunidad muy
+        bonita. Pero exigía una cantidad de dinero muy importante y aparte algo más que ya se me escapaba de
+        las manos. Cada vez que hablábamos con Florentino decía que Don Manuel no se estaba postulando bien
+        a la hora de traspasarme y que exigía muchas cosas que sinceramente se me escapaban".</p>
+    <a id="enlace1" href="#" onclick="muestraOculta('1'); return false;">Ocultar contenidos párrafo 1</a>
+    <br>
+    <form>
+        <input type="button" value="Aumentar" onclick="aumentar('1');return false;">
+        <input type="button" value="Disminuir" onclick="disminuir('1');return false;">
+        <input type="button" value="Defecto" onclick="defecto('1');return false;">
+    </form>
+    <br />
+
+    <p id="parrafo2" style="font-size:1em;"> Eden Hazard está volviendo a sonar para el Real Madrid. Ahora que el equipo
+        blanco
+        atraviesa una mala racha, una gran parte de la afición ve necesario un revulsivo para reconducir la
+        situación y echando un vistazo al mercado de fichajes, el belga es el jugador más talentoso de los que
+        podrían abandonar su equipo sin reparos. </p>
+    <a id="enlace2" href="#" onclick="muestraOculta('2'); return false;">Ocultar contenidos párrafo 2</a>
+    <br>
+    <form>
+        <input type="button" value="Aumentar" onclick="aumentar('2')">
+        <input type="button" value="Disminuir" onclick="disminuir('2')">
+        <input type="button" value="Defecto" onclick="defecto('2');return false;">
+    </form>
+    <br />
+
+    <p id="parrafo3" style="font-size:1em;">Florentino cenó con Julen Lopetegui tras la derrota del miércoles en el
+        Luzhniki
+        de Moscú. El jefe llamó a capítulo al empleado tras los últimos acontecimientos deportivos. Más allá
+        de los resultados, al presidente del Real Madrid le preocupaba el rumbo que está cogiendo el vestuario
+        del equipo blanco. “No se puede tapar el sol con un dedo”, decía Keylor Navas cuando era preguntado
+        por Cristiano Ronaldo en Moscú y la falta de gol del equipo. No le agrada al presidente escuchar el
+        nombre de Cristiano Ronaldo cada vez que pierde este Madrid.</p>
+    <a id="enlace3" href="#" onclick="muestraOculta('3'); return false;">Ocultar contenidos párrafo 3</a>
+    <br>
+    <form>
+        <input type="button" value="Aumentar" onclick="aumentar('3')">
+        <input type="button" value="Disminuir" onclick="disminuir('3')">
+        <input type="button" value="Defecto" onclick="defecto('3');return false;">
+    </form>
+
+    <script>
+
+        function muestraOculta(id) {
+            var parrafo = document.getElementById("parrafo" + id);
+            var enlace = document.getElementById("enlace" + id);
+            if (parrafo.style.display == "" || parrafo.style.display == "block") {
+                parrafo.style.display = "none";
+                enlace.innerHTML = "Mostrar contenido párrafo " + id;
+            } else {
+                parrafo.style.display = "block";
+                enlace.innerHTML = "Ocultar contenido párrafo " + id;
+            }
+        }
+
+        function aumentar(id) {
+            var parrafo = document.getElementById("parrafo" + id);
+            var fontSize = window.getComputedStyle(parrafo).getPropertyValue('font-size');
+            var fontSizeNum = parseFloat(fontSize);
+            parrafo.style.fontSize = (fontSizeNum + 1) + "px";
+        }
+
+        function disminuir(id) {
+            var parrafo = document.getElementById("parrafo" + id);
+            var fontSize = window.getComputedStyle(parrafo).getPropertyValue('font-size');
+            var fontSizeNum = parseFloat(fontSize);
+            parrafo.style.fontSize = (fontSizeNum - 1) + "px";
+        }
+
+        function defecto(id) {
+            var parrafo = document.getElementById("parrafo" + id);
+            parrafo.style.fontSize = "1em";
+        }
+
+    </script>
+
+</body>
+
+</html>

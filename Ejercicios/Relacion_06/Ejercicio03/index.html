@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 03 - Eventos</title>
+</head>
+<body>
+
+    <div id="cuadro" style="border: 2px solid black; background-color: yellow; width: 20%; height: 100px; text-align: center;">
+        <p id="mensaje"></p>
+    </div>
+
+    <script>
+        var cuadro = document.getElementById("cuadro");
+        var mensaje = document.getElementById("mensaje");
+
+        document.addEventListener("mousemove", function (e) {
+            cuadro.style.backgroundColor = "blue";
+            mensaje.innerHTML = "Posición del puntero: " + e.clientX + ", " + e.clientY;
+        });
+
+        document.addEventListener("keydown", function (e) {
+            cuadro.style.backgroundColor = "red";
+            mensaje.innerHTML = "Tecla pulsada: " + e.key + " - ASCII: " + e.keyCode;
+        });
+
+        document.addEventListener("mouseout", function (e) {
+            cuadro.style.backgroundColor = "yellow";
+        });
+    </script>
+
+</body>
+</html>
