@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 02 - Form básico</title>
+</head>
+<body>
+
+    <h1>Cuadro de texto</h1>    
+
+    <textarea name="texto" id="texto" rows="10" cols="50" maxlength="100"></textarea> <!-- Con rows y cols definimos el tamaño del textarea -->
+    <p id="info">0 caracteres escritos, 100 caracteres restantes</p>
+
+    <script>
+        let texto = document.getElementById('texto');
+        let info = document.getElementById('info');
+
+        texto.addEventListener('keypress', function(e) {
+            if (texto.value.length >= 100) {
+                e.preventDefault();
+            }
+        });
+
+        texto.addEventListener('keyup', function() {
+            let caracteresEscritos = texto.value.length;
+            let caracteresRestantes = 100 - caracteresEscritos;
+
+            info.textContent = `${caracteresEscritos} caracteres escritos, ${caracteresRestantes} caracteres restantes`;
+        });
+    </script>
+    
+</body>
+</html>
