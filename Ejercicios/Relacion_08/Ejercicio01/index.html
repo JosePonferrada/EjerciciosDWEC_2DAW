@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 01 - Relación 08 Evaluable</title>
+</head>
+<body>
+
+    <h1>Bienvenidos al sistema Comares</h1>
+    
+    <p>Introduzca su usuario y contraseña</p>
+    <form action="">
+        <label for="usuario">Usuario:</label>
+        <input type="text" name="usuario" id="usuario" required>
+        <br>
+        <label for="contrasena">Contraseña:</label>
+        <input type="password" name="contrasena" id="contrasena" required>
+        <br>
+        <input type="submit" value="Enviar">
+        <input type="button" value="Limpiar">
+    </form>
+
+    <script>
+
+        document.addEventListener('submit', (e) => {
+            e.preventDefault();
+
+            const user = document.getElementById('usuario').value;
+            const pass = document.getElementById('contrasena').value;
+
+            if (user === 'admin' && pass === '1234') {
+                alert('Bienvenido al sistema');
+            } else {
+                alert('Usuario y/o contraseña incorrectos');
+            }
+        });
+
+        document.addEventListener('click', (e) => {
+            if (e.target.value === 'Limpiar') {
+                document.getElementById('usuario').value = '';
+                document.getElementById('contrasena').value = '';
+            }
+        });
+
+    </script>
+
+</body>
+</html>
