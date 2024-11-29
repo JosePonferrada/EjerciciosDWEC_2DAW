@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 02 - Relación 08 Evaluable</title>
+</head>
+<body>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const r = Math.floor(Math.random() * 256);
+            const g = Math.floor(Math.random() * 256);
+            const b = Math.floor(Math.random() * 256);
+
+            document.body.style.backgroundColor = `rgb(${r}, ${g}, ${b})`;
+
+            num = prompt('Introduce un número');
+
+            // Vamos a pedir un número continuamente hasta que el usuario introduzca un número
+            while (isNaN(num)) {
+                alert('No has introducido un número');
+                num = prompt('Introduce un número');
+            } 
+            alert('Has introducido un número');
+        });
+    </script>
+
+</body>
+</html>
