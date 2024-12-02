@@ -42,14 +42,14 @@
             <input type="checkbox" id="bases" value="Bases de datos"> Bases de datos<br>
             <input type="checkbox" id="programacion" value="Programación"> Programación<br>
             <input type="checkbox" id="implantacion" value="Implantación de sistemas operativos"> Implantación de sistemas operativos<br>
-            <input type="checkbox" id="formacion" value="Formación y orientación laboral"> Formación y orientación laboral<br>
+            <input type="checkbox" id="formacionDAW" value="Formación y orientación laboral"> Formación y orientación laboral<br>
             <input type="checkbox" id="DWEC" value="Desarrollo web en entorno cliente"> Desarrollo web en entorno cliente<br>
             <input type="checkbox" id="DWES" value="Desarrollo web en entorno servidor"> Desarrollo web en entorno servidor<br>
             <input type="checkbox" id="DAW" value="Despliegue de aplicaciones web"> Despliegue de aplicaciones web<br>
             <input type="checkbox" id="DIW" value="Diseño de interfaces web"> Diseño de interfaces web<br>
             <input type="checkbox" id="EIE" value="Empresa e iniciativa emprendedora"> Empresa e iniciativa emprendedora<br>
             
-            Observaciones: <br><textarea placeholder="Indique alguna observación..." id="observaciones" cols="30" rows="10"></textarea><br>
+            Observaciones: <br><textarea placeholder="Indique alguna observación..." id="observacionesDAW" cols="30" rows="10"></textarea><br>
 
             <input type="submit" id="submitDAW" value="Enviar"> <input type="reset" value="Restablecer">
 
@@ -58,12 +58,12 @@
         <form id="formSMR">
 
             <h2>Matriculación en el ciclo de grado medio SMR</h2>
-            Apellidos: <input type="text" id="apellidos" required> Nombre: <input type="text" id="nombre" required><br>
-            Domilicio: <input type="text" id="domicilio" required><br>
-            Sexo: <input type="radio" name="sexo" value="Hombre" required> Hombre <input type="radio" name="sexo" value="Mujer" required> Mujer<br>
-            Edad: <input type="number" id="edad" required><br>
+            Apellidos: <input type="text" id="apellidosSMR" required> Nombre: <input type="text" id="nombreSMR" required><br>
+            Domilicio: <input type="text" id="domicilioSMR" required><br>
+            Sexo: <input type="radio" name="sexoSMR" value="Hombre" required> Hombre <input type="radio" name="sexoSMR" value="Mujer" required> Mujer<br>
+            Edad: <input type="number" id="edadSMR" required><br>
             Curso: 
-            <select name="curso" id="curso" required>
+            <select name="curso" id="cursoSMR" required>
                 <option value="1º">1º</option>
                 <option value="2º">2º</option>
             </select><br>
@@ -72,14 +72,14 @@
             <input type="checkbox" id="redes" value="Redes locales"> Redes locales<br>
             <input type="checkbox" id="sistemas" value="Sistemas operativos monopuesto"> Sistemas operativos monopuesto<br>
             <input type="checkbox" id="montaje" value="Montaje y mantenimiento de equipos"> Montaje y mantenimiento de equipos<br>
-            <input type="checkbox" id="formacion" value="Formación y orientación laboral"> Formación y orientación laboral<br>
+            <input type="checkbox" id="formacionSMR" value="Formación y orientación laboral"> Formación y orientación laboral<br>
             <input type="checkbox" id="aplicacionesweb" value="Aplicaciones web"> Aplicaciones web<br>
             <input type="checkbox" id="seguridad" value="Seguridad informática"> Seguridad informática<br>
             <input type="checkbox" id="servicios" value="Servicios en red"> Servicios en red<br>
             <input type="checkbox" id="sistemasoperativos" value="Sistemas operativos en red"> Sistemas operativos en red<br>
             <input type="checkbox" id="EIE" value="Empresa e iniciativa emprendedora"> Empresa e iniciativa empresarial<br>
             
-            Observaciones: <br><textarea placeholder="Indique alguna observación..." id="observaciones" cols="30" rows="10"></textarea><br>
+            Observaciones: <br><textarea placeholder="Indique alguna observación..." id="observacionesSMR" cols="30" rows="10"></textarea><br>
 
             <input type="submit" id="submitSMR" value="Enviar"> <input type="reset" value="Restablecer">
 
@@ -87,7 +87,21 @@
 
     </div>
 
-    <script src="script.js"></script>
+    <script>
+        document.getElementById('formDAW').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const btnSMR = document.getElementById('submitSMR');
+            btnSMR.disabled = true;
+            alert('Matriculación en el ciclo de grado superior DAW realizada con éxito.');
+        });
+
+        document.getElementById('formSMR').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const btnDAW = document.getElementById('submitDAW');
+            btnDAW.disabled = true;
+            alert('Matriculación en el ciclo de grado medio SMR realizada con éxito.');
+        });
+    </script>
 
 </body>
 </html>
