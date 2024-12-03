@@ -25,11 +25,11 @@ function puedeColocarBarco(fila, columna, longitud, orientacion) {
             let checkFila = orientacion === 0 ? fila + j : fila + i;
             let checkColumna = orientacion === 0 ? columna + i : columna + j;
             if (
-                checkFila >= 0 &&
-                checkFila < 10 &&
-                checkColumna >= 0 &&
-                checkColumna < 10 &&
-                tabla.rows[checkFila].cells[checkColumna].style.backgroundColor === "black"
+                checkFila >= 0 && // Si la fila es mayor o igual a 0
+                checkFila < 10 && // y la fila es menor a 10
+                checkColumna >= 0 && // y la columna es mayor o igual a 0
+                checkColumna < 10 && // y la columna es menor a 10
+                tabla.rows[checkFila].cells[checkColumna].style.backgroundColor === "black" // y la celda es negra
             ) {
                 return false;
             }
