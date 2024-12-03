@@ -1,3 +1,20 @@
+/* 
+Para usar jsonPlaceholder como una API REST falsa para simular el funcionamiento de una BD,
+lo primero que debemos de tener es nodejs, por tanto, habrá que seguir los pasos:
+1) Visitar nodejs.org y descargar la versión que deseemmos o necesitemos
+2) Instalar nodejs que hemos descargado
+3) Podemos comprobar si se ha instalado bien desde el terminal de windows o del de Visual Studio Code con node -v 
+4) Entrar en la página jsonPlaceholder que es la API que vamos a usar y enlazar con json-server
+5) Acceder y abajo viene como instalar json-server para poder simular la API REST
+6) Comando de instalación con el gestor de paquetes npm de nodejs: npm install -g json-server
+7) Descargar la versión core de insomnia para manejar la API Falsa ( https://insomnia.rest/download/)
+8) Iniciar insomnia
+9) Ejecutar desde un terminal de visual estudio code: json-server -w -p puerto json, donde puerto
+    por defecto es el 3333, pero podemos elegir otro para evitar conflictos, ej. 5555,
+    y donde json es el objeto json a usar
+10) Realizar las peticiones y pruebas necesarias
+*/
+
 const d = document,
     $table = d.querySelector(".crud-table"),
     $form = d.querySelector(".crud-form"),
@@ -38,7 +55,7 @@ const getAll = () => {
 
     ajax({
 
-        url: "http://localhost:3000/pilotos",
+        url: "http://localhost:5555/pilotos",
 
         success: (respuesta) => {
 
@@ -50,11 +67,11 @@ const getAll = () => {
                 $template.querySelector(".puntos").textContent = el.puntos;
 
 
-                $template.querySelector(".editar").dataset.id = el.id;
-                $template.querySelector(".editar").dataset.dorsal = el.dorsal;
-                $template.querySelector(".editar").dataset.nombre = el.nombre;
-                $template.querySelector(".editar").dataset.equipo = el.equipo;
-                $template.querySelector(".editar").dataset.puntos = el.puntos;
+                $template.querySelector(".edit").dataset.id = el.id;
+                $template.querySelector(".edit").dataset.dorsal = el.dorsal;
+                $template.querySelector(".edit").dataset.nombre = el.nombre;
+                $template.querySelector(".edit").dataset.equipo = el.equipo;
+                $template.querySelector(".edit").dataset.puntos = el.puntos;
 
                 $template.querySelector(".delete").dataset.id = el.id;
 
@@ -123,7 +140,7 @@ d.addEventListener("submit", e => {
 
 d.addEventListener("click", e => {
 
-    if (e.target.matches(".editar")) {
+    if (e.target.matches(".edit")) {
 
         $titulo.textContent = "Editar piloto";
         $form.dorsal.value = e.target.dataset.dorsal;
