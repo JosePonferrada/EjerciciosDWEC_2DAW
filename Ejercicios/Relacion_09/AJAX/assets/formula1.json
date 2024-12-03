@@ -1,0 +1,95 @@
+{
+    "pilotos": [
+        {
+            "id": 1,
+            "dorsal": 1,
+            "nombre": "Max Verstappen",
+            "equipo": "Red Bull Racing",
+            "puntos": 429
+        },
+        {
+            "dorsal": 44,
+            "nombre": "Lewis Hamilton",
+            "equipo": "Mercedes",
+            "puntos": 211
+        },
+        {
+            "dorsal": 16,
+            "nombre": "Charles Leclerc",
+            "equipo": "Ferrari",
+            "puntos": 341
+        },
+        {
+            "dorsal": 55,
+            "nombre": "Carlos Sainz",
+            "equipo": "Ferrari",
+            "puntos": 272
+        },
+        {
+            "dorsal": 77,
+            "nombre": "Valtteri Bottas",
+            "equipo": "Sauber",
+            "puntos": 0
+        },
+        {
+            "dorsal": 14,
+            "nombre": "Fernando Alonso",
+            "equipo": "Aston Martin",
+            "puntos": 68
+        },
+        {
+            "dorsal": 11,
+            "nombre": "Sergio Pérez",
+            "equipo": "Red Bull Racing",
+            "puntos": 152
+        }
+    ],
+    "escuderias": [
+        {
+            "nombre": "Red Bull Racing",
+            "puntos": 581
+        },
+        {
+            "nombre": "Mercedes",
+            "puntos": 446
+        },
+        {
+            "nombre": "Ferrari",
+            "puntos": 619
+        },
+        {
+            "nombre": "Aston Martin",
+            "puntos": 92
+        },
+        {
+            "nombre": "Sauber",
+            "puntos": 4
+        }
+    ],
+    "circuitos": [
+        {
+            "nombre": "Albert Park",
+            "pais": "Australia",
+            "ganador": "Carlos Sainz",
+            "equipo": "Ferrari"
+        },
+        {
+            "nombre": "Circuit de Barcelona-Catalunya",
+            "pais": "Spain",
+            "ganador": "Max Verstappen",
+            "equipo": "Red Bull Racing"
+        },
+        {
+            "nombre": "Silverstone Circuit",
+            "pais": "United Kingdom",
+            "ganador": "Lewis Hamilton",
+            "equipo": "Mercedes"
+        },
+        {
+            "nombre": "Red Bull Ring",
+            "pais": "Austria",
+            "ganador": "George Russell",
+            "equipo": "Mercedes"
+        }
+    ]
+}

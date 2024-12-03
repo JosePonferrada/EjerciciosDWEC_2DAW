@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRUD AJAX Apirest</title>
+</head>
+<body>
+    
+    <h1>CRUD AJAX Apirest</h1>
+    <section class="crud">
+        <div>
+            <h2 class="crud-titulo">Agregar Piloto</h2>
+            <form class="crud-form">
+                <input type="text" name="nombre" placeholder="Nombre" required>
+                <br>
+                <input type="text" name="dorsal" placeholder="Dorsal" required>
+                <br>
+                <input type="text" name="equipo" placeholder="Equipo" required>
+                <br>
+                <input type="number" name="puntos" placeholder="Puntos" required>
+                <br>
+                <input type="submit" value="Enviar">
+                <input type="hidden" name="id">
+            </form>
+        </div>
+        <div>
+            <h2>Pilotos F1</h2>
+            <table class="crud-table" border=1>
+                <thead>
+                    <tr>
+                        <th>Dorsal</th>
+                        <th>Nombre</th>
+                        <th>Equipo</th>
+                        <th>Puntos</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                </tbody>
+            </table>
+        </div>
+    </section>
+    <template id="crud-template">
+        <tr>
+            <td class="dorsal"></td>
+            <td class="nombre"></td>
+            <td class="equipo"></td>
+            <td class="puntos"></td>
+            <td>
+                <button class="edit" id="editar">Editar</button>
+                <button class="delete" id="borrar">Eliminar</button>
+            </td>
+        </tr>
+    </template>
+
+    <script src="js/CRUD_AJAX_apirest.js"></script>
+
+</body>
+</html>
