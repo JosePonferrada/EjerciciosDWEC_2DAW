@@ -20,10 +20,10 @@ d.body.appendChild(tabla);
 
 // Función para comprobar si se puede colocar un barco sin tocar otro
 function puedeColocarBarco(fila, columna, longitud, orientacion) {
-    for (let i = -1; i <= longitud; i++) {
+    for (let i = -1; i <= longitud; i++) { // Comprobamos las celdas adyacentes a las que ocupará el barco y la celda que ocupará el barco en sí
         for (let j = -1; j <= 1; j++) {
-            let checkFila = orientacion === 0 ? fila + j : fila + i;
-            let checkColumna = orientacion === 0 ? columna + i : columna + j;
+            let checkFila = orientacion === 0 ? fila + j : fila + i; // Si la orientación es horizontal, comprobamos la fila + j, si no, comprobamos la fila + i 
+            let checkColumna = orientacion === 0 ? columna + i : columna + j; // Si la orientación es horizontal, comprobamos la columna + i, si no, comprobamos la columna + j
             if (
                 checkFila >= 0 && // Si la fila es mayor o igual a 0
                 checkFila < 10 && // y la fila es menor a 10
