@@ -16,3 +16,19 @@ divs.forEach(div => {
     div.addEventListener("mouseover", () => cambiarColorFondo(div.style.backgroundColor)); // Arrow function para pasar el color de fondo del div
     div.addEventListener("mouseout", restaurarColorFondo);
 });
+
+// Otra forma de hacerlo
+/* document.addEventListener("mouseover", (e) => {
+    if(e.target.matches("#div1")) {
+        cambiarColorFondo(e.target.style.backgroundColor);
+    }
+    if(e.target.matches("#div2")) {
+        cambiarColorFondo(e.target.style.backgroundColor);
+    }
+    if(e.target.matches("#div3")) {
+        cambiarColorFondo(e.target.style.backgroundColor);
+    }
+    if(e.target.matches("#div4")) {
+        cambiarColorFondo(e.target.style.backgroundColor);
+    }
+}); */
