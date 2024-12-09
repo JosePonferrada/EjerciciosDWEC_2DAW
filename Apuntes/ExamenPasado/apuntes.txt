@@ -1,0 +1,171 @@
+1) Centro de reparaciones
+a) Mostrar los síntomas seleccionados en consola 
+
+function mostrarSintomas() {
+    const sintomas = document.querySelectorAll('input[name="sintomas"]:checked');
+    sintomas.forEach(sintoma => console.log(sintoma.value));
+}
+
+
+b) Texto blanco sobre fondo negro en el área de texto
+
+function configurarAreaTexto() {
+    const areaTexto = document.querySelector('textarea');
+    areaTexto.addEventListener('focus', () => {
+        areaTexto.style.color = "white";
+        areaTexto.style.backgroundColor = "black";
+    });
+}
+
+
+c) Añadir campos de marca y modelo para "Ordenador portátil"
+
+function mostrarCamposPortatil() {
+    const tipoReparacion = document.querySelector('#tipoReparacion');
+    tipoReparacion.addEventListener('change', () => {
+        if (tipoReparacion.value === 'portatil') {
+            const contenedor = document.querySelector('#contenedorCamposExtra');
+            contenedor.innerHTML = `
+                <div>
+                    <label for="marca">Marca:</label>
+                    <input type="text" id="marca" name="marca" />
+                </div>
+                <div>
+                    <label for="modelo">Modelo:</label>
+                    <input type="text" id="modelo" name="modelo" />
+                </div>`;
+        } else {
+            document.querySelector('#contenedorCamposExtra').innerHTML = '';
+        }
+    });
+}
+
+
+d) Validar campos obligatorios
+
+function validarFormulario() {
+    const nombre = document.querySelector('#nombre').value.trim();
+    const apellidos = document.querySelector('#apellidos').value.trim();
+    const telefono = document.querySelector('#telefono').value.trim();
+    const serie = document.querySelector('#serie').value.trim();
+    const tipoReparacion = document.querySelector('#tipoReparacion').value;
+    const sintomas = document.querySelectorAll('input[name="sintomas"]:checked');
+
+    if (!nombre || !apellidos || !telefono || !serie || !tipoReparacion || sintomas.length === 0) {
+        alert('Por favor, complete todos los campos obligatorios.');
+        return false;
+    }
+    return true;
+}
+
+
+e) Validar formato de contraseña
+
+function validarContrasena() {
+    const contrasena = document.querySelector('#contrasena').value;
+    const patron = /^_\d{3}[A-Z][a-z]_$/;
+    if (!patron.test(contrasena)) {
+        alert('La contraseña no cumple con el formato requerido.');
+        return false;
+    }
+    return true;
+}
+
+
+
+
+2) Objeto "Carta" de una baraja de póker
+
+class Carta {
+    constructor(palo, valor) {
+        this.palo = palo;
+        this.valor = valor;
+    }
+
+    nombreCarta() {
+        const palos = ['corazones', 'diamantes', 'picas', 'tréboles'];
+        const valores = ['as', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K'];
+        return `${valores[this.valor - 1]} de ${palos[this.palo - 1]}`;
+    }
+}
+
+// Ejemplo
+const carta = new Carta(1, 1);
+console.log(carta.nombreCarta()); // "as de corazones"
+
+
+3) Función quiniela
+
+function quiniela(numDobles) {
+    const opciones = ['1', 'X', '2'];
+    let resultados = [];
+
+    for (let i = 1; i <= 14; i++) {
+        let resultado = [opciones[Math.floor(Math.random() * 3)]];
+
+        if (numDobles > 0) {
+            const doble = opciones.filter(op => !resultado.includes(op))[Math.floor(Math.random() * 2)];
+            resultado.push(doble);
+            numDobles--;
+        }
+        resultados.push(`Partido ${i}: ${resultado.join(' ')}`);
+    }
+    resultados.forEach(r => console.log(r));
+}
+
+// Ejemplo
+quiniela(3);
+
+
+
+4) Documento HTML y JavaScript para botones
+
+HTML
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Botones y texto</title>
+</head>
+<body>
+    <button id="boton1">Botón 1</button>
+    <button id="boton2">Botón 2</button>
+    <button id="boton3">Botón 3</button>
+    <button id="boton4">Botón 4</button>
+    <button id="boton5">Botón 5</button>
+    <input type="text" id="texto" style="display: none;">
+    <p id="info"></p>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
+
+JS
+
+document.querySelector('#boton1').addEventListener('click', () => {
+    document.body.style.backgroundColor = 'red';
+});
+
+document.querySelector('#boton2').addEventListener('click', () => {
+    const texto = document.querySelector('#texto');
+    texto.style.display = 'block';
+});
+
+document.querySelector('#boton3').addEventListener('click', () => {
+    const texto = document.querySelector('#texto');
+    texto.style.color = 'white';
+    texto.style.backgroundColor = 'green';
+    texto.value = 'Estoy dentro del cuadro de texto';
+});
+
+document.querySelector('#boton4').addEventListener('click', () => {
+    const texto = document.querySelector('#texto').value;
+    document.querySelector('#texto').value = texto.split('').reverse().join('');
+});
+
+document.querySelector('#boton5').addEventListener('click', () => {
+    const texto = document.querySelector('#texto').value;
+    document.querySelector('#info').innerText = `Número de caracteres: ${texto.length}`;
+});
