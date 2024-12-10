@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jardines Comares</title>
+</head>
+<body>
+
+    <h1>Jardines IES Marqués de Comares</h1>
+    <form id="formulario" action="#" method="post">
+        
+        Identificador Planta: <input type="text" id="idPlanta" required><br>
+        Nombre Planta: <input type="text" id="nombrePlanta" required><br>
+        Nombre Especie: <input type="text" id="especiePlanta" required><br>
+        Observaciones interesantes:<br>
+        <textarea id="observacionesPlanta"  rows="4"></textarea>
+        <br>
+        <br>
+
+        Tipo de Planta:<br>
+        <input type="radio" id="arbol" name="tipoPlanta" value="Árbol" required>Árbol<br>
+        <input type="radio" id="arbusto" name="tipoPlanta" value="Arbusto" required>Arbusto<br>
+        <input type="radio" id="flor" name="tipoPlanta" value="Flor" required>Flor
+        <br>
+        <br>
+
+       Cuidados Especiales:<br>
+        <input type="checkbox" id="riegoRegular" name="cuidados[]" value="Riego Regular">Riego Regular<br>
+        <input type="checkbox" id="sombra" name="cuidados[]" value="Sombra">Necesita sombra<br>
+        <input type="checkbox" id="fertilizacion" name="cuidados[]" value="Fertilización">Fertilización
+        <br>
+        <br>
+
+Nivel de Luz:<br>
+<select id="nivelLuz" name="nivelLuz">
+    <option value="Baja">Baja</option>
+    <option value="Media">Media</option>
+    <option value="Alta">Alta</option>
+</select>
+<br><br>
+
+<button type="submit" id="enviar">Enviar</button>
+<input type="reset" id="limpiar" value="Limpiar">
+</form>
+
+<script src="index.js"></script>
+
+</body>
+</html>
