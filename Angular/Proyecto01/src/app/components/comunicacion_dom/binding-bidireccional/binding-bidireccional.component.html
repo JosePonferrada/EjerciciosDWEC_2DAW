@@ -1,0 +1,6 @@
+<!--Ejemplo de event binding bidireccional (banana in box), cargará en ambos sentidos por tanto, al 
+cargar la página aparecerá el valor inicial de la especialidad--> 
+<br><br>
+Especialidad Ingenería: {{especialidad}}<br> 
+<!--Introduzca especialidad: <input type="text" (input)="actualizarEspecialidad($event)">--> 
+Introduzca especialidad: <input type="text" [(ngModel)]="especialidad">
