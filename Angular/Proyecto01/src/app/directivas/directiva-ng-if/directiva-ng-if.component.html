@@ -1,0 +1,15 @@
+<!--Formulario para explicar directiva ngIf --> 
+<p></p> 
+<div>la nota del alumno es {{nota}}</div> 
+<form> 
+<br> 
+Nombre Alumno:<input type="text" name="alumno" [(ngModel)]="nombreAlumno"><br> 
+Módulo: <input type="modulo" name="modulo" [(ngModel)]="nombreModulo" ><br> 
+<input type="submit" value="Consultar nota" (click)="consultaNota()"><br> 
+</form> 
+<div *ngIf="obtenerNota;else sinNota" [ngStyle]="{'background-color':'red'}">La nota obtenida por el alumno 
+{{nombreAlumno}} en el módulo {{nombreModulo}} es: {{nota}}</div> 
+<!-- equivale al template en HTML5 con javascript--> 
+<ng-template #sinNota> 
+<div [ngStyle]="{'background-color':'yellow'}"> ¿Todavía no tienes tu nota?</div> 
+</ng-template> 
