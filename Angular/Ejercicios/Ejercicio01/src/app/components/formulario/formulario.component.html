@@ -1,5 +1,6 @@
-<div>
+<div class="formulario">
     <form>
+        <!-- Interpolación de variables -->
         <p *ngIf="nombre">Hola {{nombre}}</p>
 
         <label for="nombre">Nombre:</label>
@@ -12,6 +13,7 @@
         <input type="email" id="email" name="email" [(ngModel)]="email">
 
         <br>
+        <!-- Property binding -->
         <button [disabled]="!nombre || !edad || !email" (click)="enviar()">Enviar</button>
     </form>
 </div>

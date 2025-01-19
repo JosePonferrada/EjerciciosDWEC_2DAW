@@ -1,82 +1,104 @@
+* {
+    font-family: 'Montserrat', sans-serif;
+}
+
+
 /* General */
 body {
-    font-family: Roboto, sans-serif;
-    background-color: #f4f4f9;
+    background-color: #f0f0f0; /* Fondo general de la página */
     margin: 0;
-    padding: 0;
+    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-}
-
-/* Formulario */
-form {
-    background-color: #ffffff;
-    padding: 20px 30px;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Contenedor del formulario */
+  .formulario {
+    background-color: #f9f9f9; /* Fondo del formulario */
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     width: 100%;
     max-width: 400px;
-}
-
-/* Títulos y mensajes */
-form p {
-    font-size: 1.2em;
-    color: #333333;
-    margin-bottom: 20px;
-}
-
-/* Etiquetas */
-form label {
-    display: block;
-    margin-bottom: 5px;
+    border: 1px solid #a0a0a0; /* Borde ligero para diferenciarlo */
+  }
+  
+  /* Estilo del párrafo de bienvenida */
+  p {
+    font-size: 1.1rem;
+    color: #333;
     font-weight: bold;
-    color: #555555;
-}
-
-/* Inputs */
-form input {
+    text-align: center;
+    margin-bottom: 1.5rem;
+  }
+  
+  /* Etiquetas */
+  label {
+    font-size: 0.9rem;
+    font-weight: bold;
+    color: #555;
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+  
+  /* Inputs */
+  input {
     width: 100%;
-    padding: 10px;
-    margin-bottom: 15px;
-    border: 1px solid #dddddd;
+    padding: 0.8rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ccc;
     border-radius: 5px;
-    box-sizing: border-box;
-    font-size: 1em;
-    color: #333333;
-}
-
-form input:focus {
-    border-color: #007bff;
+    font-size: 0.9rem;
     outline: none;
-    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
-}
-
-/* Botón */
-form button {
-    background-color: #007bff;
-    color: white;
-    padding: 10px 20px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    box-sizing: border-box;
+  }
+  
+  input:focus {
+    border-color: #666;
+    box-shadow: 0 0 5px rgba(102, 102, 102, 0.5);
+  }
+  
+  /* Botón */
+  button {
+    width: 100%;
+    padding: 0.9rem;
+    font-size: 1rem;
+    font-weight: bold;
+    color: #fff;
+    background-color: #333;
     border: none;
     border-radius: 5px;
-    font-size: 1em;
     cursor: pointer;
-    width: 100%;
-    transition: background-color 0.3s;
-}
-
-form button:disabled {
-    background-color: #cccccc;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+  
+  button:disabled {
+    background-color: #999;
     cursor: not-allowed;
-}
-
-form button:not(:disabled):hover {
-    background-color: #0056b3;
-}
-
-div {
+  }
+  
+  button:not(:disabled):hover {
+    background-color: #555;
+    transform: scale(1.02);
+  }
+  
+  /* Espaciado entre los elementos del formulario */
+  form {
     display: flex;
-    justify-content: center;
-    align-items: center;
-}
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  /* Responsividad */
+  @media (max-width: 480px) {
+    .formulario {
+      padding: 1.5rem;
+    }
+  
+    button {
+      font-size: 0.9rem;
+    }
+  }
+  
