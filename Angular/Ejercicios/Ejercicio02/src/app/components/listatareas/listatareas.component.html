@@ -1,0 +1,6 @@
+<div class="listatareas">
+    <h2>Lista de tareas</h2>
+    
+    <app-tarea *ngFor="let tarea of tareas" [tarea]="tarea" (completada)="completarTarea($event)"></app-tarea>
+
+</div>
