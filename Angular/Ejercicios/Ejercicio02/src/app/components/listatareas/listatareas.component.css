@@ -1,0 +1,41 @@
+/* General */
+.container {
+    max-width: 500px;
+    margin: 2rem auto;
+    padding: 1.5rem;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  h2, h3 {
+    text-align: center;
+    color: #333;
+  }
+  
+  ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.5rem;
+    padding: 0.5rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+  }
+  
+  input[type="checkbox"] {
+    margin-right: 1rem;
+    cursor: pointer;
+  }
+  
+  /* Clase para tachar tareas completadas */
+  .tachada {
+    text-decoration: line-through;
+    transition: 0.3s ease;
+    color: gray;
+  }
+  

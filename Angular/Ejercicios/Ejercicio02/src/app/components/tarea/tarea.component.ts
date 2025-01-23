@@ -1,26 +1,19 @@
+import { NgForOf } from '@angular/common';
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'app-tarea',
-  imports: [],
+  imports: [NgForOf],
   templateUrl: './tarea.component.html',
-  styleUrl: './tarea.component.css'
+  styleUrls: ['./tarea.component.css']
 })
 export class TareaComponent {
 
-  // Atributos de la tarea
-  id: number;
-  nombre: string;
-  estado: boolean;
+  @Input() tareas: { tarea: string; completada: boolean }[] = []; // Recibe las tareas desde el padre
+  @Output() estadoActualizado = new EventEmitter<number>(); // Emite el índice de la tarea al padre
 
-  // Constructor
-  constructor(id: number, nombre: string, estado: boolean) {
-    this.id = id;
-    this.nombre = nombre;
-    this.estado = estado;
+  // Método para emitir el índice de la tarea completada al padre
+  marcarCompletada(index: number): void {
+    this.estadoActualizado.emit(index);
   }
-
-  @Input() tarea!: TareaComponent;
-  @Output() completarTarea = new EventEmitter<TareaComponent>();
-
 }

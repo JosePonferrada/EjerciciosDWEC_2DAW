@@ -1,1 +1,7 @@
-<p>tarea works!</p>
+<h3>Lista de Tareas (Hijo)</h3>
+<ul>
+  <li *ngFor="let tareaObj of tareas; let i = index">
+    <input type="checkbox" [checked]="tareaObj.completada" (change)="marcarCompletada(i)">
+    <span [class.completada]="tareaObj.completada">{{ tareaObj.tarea }}</span>
+  </li>
+</ul>

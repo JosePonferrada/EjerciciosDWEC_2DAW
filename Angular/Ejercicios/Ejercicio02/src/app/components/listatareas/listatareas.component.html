@@ -1,6 +1,14 @@
-<div class="listatareas">
-    <h2>Lista de tareas</h2>
+<div class="container">
+    <h2>Lista de Tareas</h2>
     
-    <app-tarea *ngFor="let tarea of tareas" [tarea]="tarea" (completada)="completarTarea($event)"></app-tarea>
-
-</div>
+    <!-- Lista de tareas tachadas dinámicamente -->
+    <ul>
+      <li *ngFor="let tareaObj of tareas; let i = index">
+        <span [class.tachada]="tareaObj.completada">{{ tareaObj.tarea }}</span>
+      </li>
+    </ul>
+  
+    <!-- Componente hijo -->
+    <app-tarea [tareas]="tareas" (estadoActualizado)="actualizarEstado($event)">
+    </app-tarea>
+  </div>
